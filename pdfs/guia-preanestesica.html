@@ -1,723 +1,314 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Guía Preanestésica para Pacientes</title>
-<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- PAGE 1: INTRODUCCIÓN Y EVALUACIÓN PREANESTÉSICA -->
+<div class="page">
+    <div class="header">
+        <span class="header-logo">Dr. Jhonatan Guevara</span>
+        <span class="header-title">Evaluación y Riesgo Quirúrgico</span>
+    </div>
 
-  :root {
-    --blue: #0071e3;
-    --blue-light: #e8f1fb;
-    --blue-dark: #004fa3;
-    --teal: #00b48a;
-    --teal-light: #e0f7f2;
-    --amber: #ff9500;
-    --amber-light: #fff3e0;
-    --red: #ff3b30;
-    --red-light: #fff0ef;
-    --green: #34c759;
-    --green-light: #e8f9ed;
-    --gray-bg: #f5f5f7;
-    --gray-card: #ffffff;
-    --gray-border: #d2d2d7;
-    --gray-text: #1d1d1f;
-    --gray-sub: #6e6e73;
-    --gray-hint: #86868b;
-    --shadow: 0 4px 24px rgba(0,0,0,0.08);
-    --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
-    --radius: 18px;
-    --radius-sm: 12px;
-    --font: -apple-system, 'SF Pro Display', BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  }
+    <h1>1. La Consulta Preanestésica y tu Seguridad</h1>
+    <p>La consulta preanestésica es una evaluación obligatoria y fundamental de acuerdo a la <strong>Resolución Ministerial N° 660-2022/MINSA</strong> en el Perú y los estándares de la <strong>Sociedad Americana de Anestesiólogos (ASA)</strong>. Su principal objetivo es evaluar tu estado físico, identificar factores de riesgo y planificar el plan anestésico más seguro para tu cirugía.</p>
+    
+    <h2>El Rol del Anestesiólogo</h2>
+    <p>Contario al mito popular, el anestesiólogo no solo "te duerme". Somos los médicos especialistas encargados de monitorizar y mantener estables tus funciones vitales (corazón, pulmones, presión arterial y cerebro) durante todo el procedimiento quirúrgico y asegurar que despiertes con el menor dolor posible.</p>
 
-  body {
-    font-family: var(--font);
-    background: var(--gray-bg);
-    color: var(--gray-text);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+    <h2>Clasificación del Estado Físico (ASA)</h2>
+    <p>Para catalogar tu estado general de salud antes de la cirugía, los anestesiólogos utilizamos la clasificación del estado físico de la ASA. Esto nos ayuda a anticipar necesidades y optimizar tu cuidado:</p>
 
-  /* ── HERO ── */
-  .hero {
-    background: linear-gradient(160deg, #0a2540 0%, #004fa3 55%, #0071e3 100%);
-    color: #fff;
-    padding: 40px 20px 60px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: 24px;
-    margin-bottom: 20px;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(0,180,138,0.25) 0%, transparent 70%);
-  }
-  .hero-icon {
-    width: 80px; height: 80px;
-    background: rgba(255,255,255,0.15);
-    border-radius: 22px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 28px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
-  }
-  .hero-icon svg { width: 40px; height: 40px; }
-  .hero h1 {
-    font-size: clamp(32px, 5vw, 52px);
-    font-weight: 700;
-    letter-spacing: -1.5px;
-    margin-bottom: 16px;
-    position: relative;
-  }
-  .hero p {
-    font-size: 18px;
-    font-weight: 300;
-    opacity: 0.8;
-    max-width: 540px;
-    margin: 0 auto 32px;
-    position: relative;
-  }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 100px;
-    padding: 10px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    position: relative;
-  }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: #34c759; }
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Clasificación</th>
+                    <th style="width: 45%;">Descripción Clínica</th>
+                    <th style="width: 30%;">Ejemplos Comunes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="pill pill-green">ASA I</span></td>
+                    <td>Paciente sano, no fumador, con mínimo o nulo consumo de alcohol.</td>
+                    <td>Sin enfermedades crónicas ni cirugías recientes.</td>
+                </tr>
+                <tr>
+                    <td><span class="pill pill-blue">ASA II</span></td>
+                    <td>Paciente con enfermedad sistémica leve controlada, sin limitaciones funcionales.</td>
+                    <td>Hipertensión o diabetes controlada, fumador activo, sobrepeso leve.</td>
+                </tr>
+                <tr>
+                    <td><span class="pill pill-amber">ASA III</span></td>
+                    <td>Paciente con enfermedad sistémica grave, no incapacitante, con impacto funcional.</td>
+                    <td>Diabetes no controlada, antecedente de infarto (>3 meses), EPOC, obesidad severa.</td>
+                </tr>
+                <tr>
+                    <td><span class="pill pill-red">ASA IV</span></td>
+                    <td>Paciente con enfermedad sistémica grave que representa una amenaza constante para la vida.</td>
+                    <td>Infarto reciente (<3 meses), angina inestable, falla renal sin diálisis estable.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-  /* ── NOTICE ── */
-  .notice {
-    background: #fff8e7;
-    border-left: 4px solid var(--amber);
-    border-radius: 0;
-    padding: 18px 40px;
-    font-size: 14px;
-    color: #5a3e0a;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .notice svg { flex-shrink: 0; }
+    <div class="alert alert-warning">
+        <div class="alert-title">Nota sobre el Riesgo Quirúrgico Cardiovascular</div>
+        <p>En el Perú, los establecimientos de salud solicitan además el "Riesgo Quirúrgico" elaborado por cardiología o medicina interna. Esta evaluación complementa pero <strong>no reemplaza</strong> la evaluación de tu anestesiólogo.</p>
+    </div>
 
-  /* ── WRAPPER ── */
-  .wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 0 40px;
-  }
-
-  /* ── SECTION HEADER ── */
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-  .section-num {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    background: var(--blue);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 600;
-    flex-shrink: 0;
-  }
-  .section-header h2 {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: var(--gray-text);
-  }
-
-  /* ── CARDS ── */
-  .card {
-    background: var(--gray-card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 32px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(0,0,0,0.04);
-    page-break-inside: avoid;
-  }
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-bottom: 16px;
-  }
-  .card-sm {
-    background: var(--gray-card);
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
-    padding: 24px;
-    border: 1px solid rgba(0,0,0,0.04);
-  }
-
-  /* ── INFO ITEMS ── */
-  .info-item {
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-    padding: 16px 0;
-    border-bottom: 1px solid #f0f0f0;
-    page-break-inside: avoid;
-  }
-  .info-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .info-item:first-child { padding-top: 0; }
-  .info-icon {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .info-icon.blue { background: var(--blue-light); }
-  .info-icon.teal { background: var(--teal-light); }
-  .info-icon.amber { background: var(--amber-light); }
-  .info-icon.red { background: var(--red-light); }
-  .info-icon.green { background: var(--green-light); }
-
-  .info-text strong {
-    display: block;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--gray-text);
-    margin-bottom: 3px;
-  }
-  .info-text p {
-    font-size: 14px;
-    color: var(--gray-sub);
-  }
-
-  /* ── TIMELINE ── */
-  .timeline { display: flex; flex-direction: column; gap: 0; }
-  .tl-item {
-    display: flex;
-    gap: 20px;
-    position: relative;
-    page-break-inside: avoid;
-  }
-  .tl-item:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 23px; top: 50px;
-    width: 2px;
-    height: calc(100% - 30px);
-    background: linear-gradient(to bottom, var(--blue-light), transparent);
-  }
-  .tl-dot {
-    width: 46px; height: 46px;
-    border-radius: 50%;
-    background: var(--blue);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    font-size: 14px;
-    font-weight: 700;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 4px 12px rgba(0,113,227,0.3);
-  }
-  .tl-content {
-    background: #fff;
-    border-radius: var(--radius-sm);
-    padding: 20px 24px;
-    margin-bottom: 16px;
-    flex: 1;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0,0,0,0.04);
-  }
-  .tl-content h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--blue);
-    margin-bottom: 10px;
-  }
-  .tl-content ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
-  .tl-content ul li {
-    font-size: 14px;
-    color: var(--gray-sub);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .tl-content ul li::before {
-    content: '';
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--blue);
-    margin-top: 6px;
-    flex-shrink: 0;
-  }
-
-  /* ── QUESTIONS ── */
-  .question-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 14px 0;
-    border-bottom: 1px solid #f0f0f0;
-    page-break-inside: avoid;
-  }
-  .question-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .question-item:first-child { padding-top: 0; }
-  .q-num {
-    width: 26px; height: 26px;
-    border-radius: 7px;
-    background: var(--blue-light);
-    color: var(--blue-dark);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-  .question-item p {
-    font-size: 15px;
-    color: var(--gray-text);
-    font-weight: 500;
-  }
-
-  /* ── WARNINGS ── */
-  .warning-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-  }
-  .warning-card {
-    background: var(--red-light);
-    border-radius: var(--radius-sm);
-    padding: 20px;
-    border: 1px solid rgba(255,59,48,0.12);
-    page-break-inside: avoid;
-  }
-  .warning-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #c0392b;
-    margin-bottom: 6px;
-  }
-  .warning-card p {
-    font-size: 13px;
-    color: #8b2020;
-    line-height: 1.5;
-  }
-  .warning-card .w-icon {
-    width: 32px; height: 32px;
-    background: rgba(255,59,48,0.12);
-    border-radius: 8px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 12px;
-  }
-
-  /* ── DAY OF PROCEDURE ── */
-  .procedure-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-  }
-  .proc-card {
-    background: var(--green-light);
-    border-radius: var(--radius-sm);
-    padding: 20px;
-    border: 1px solid rgba(52,199,89,0.15);
-    text-align: center;
-    page-break-inside: avoid;
-  }
-  .proc-card .p-icon {
-    width: 48px; height: 48px;
-    background: rgba(52,199,89,0.15);
-    border-radius: 13px;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 12px;
-  }
-  .proc-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1a7a35;
-    margin-bottom: 5px;
-  }
-  .proc-card p {
-    font-size: 13px;
-    color: #2d5e38;
-    line-height: 1.5;
-  }
-
-  /* ── SECTION DIVIDER ── */
-  .section-block { margin-bottom: 56px; }
-
-  /* ── BRING LIST ── */
-  .bring-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    margin-top: 20px;
-  }
-  .bring-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: var(--gray-bg);
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    page-break-inside: avoid;
-  }
-  .bring-item span { font-size: 14px; font-weight: 500; color: var(--gray-text); }
-
-  /* ── FOOTER ── */
-  footer {
-    background: #1d1d1f;
-    color: #a1a1a6;
-    text-align: center;
-    padding: 36px 24px;
-    font-size: 13px;
-    line-height: 1.8;
-  }
-  footer strong { color: #fff; }
-
-  @media (max-width: 600px) {
-    .hero { padding: 40px 20px 60px; }
-    .wrapper { padding: 20px 0 40px; }
-    .card { padding: 22px 18px; }
-    .tl-item::after { left: 22px; }
-  }
-  
-  @media print {
-    body { background: white; }
-    .hero {
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-    .card, .warning-card, .proc-card, .bring-item, .info-item, .tl-item, .question-item, .section-header {
-      break-inside: avoid;
-      page-break-inside: avoid;
-    }
-    .card-grid, .warning-grid, .procedure-grid, .bring-list {
-      display: block;
-    }
-    .warning-card, .proc-card, .bring-item {
-      margin-bottom: 16px;
-    }
-    /* timeline flex creates issues when page breaking, we force block */
-    .timeline { display: block; }
-    .tl-item { display: flex; } /* keep flex for side by side but avoid breaking inside */
-  }
-</style>
-</head>
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-icon">
-    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 6C20 6 10 12 10 22C10 27.52 14.48 32 20 32C25.52 32 30 27.52 30 22C30 12 20 6 20 6Z" fill="rgba(255,255,255,0.9)"/>
-      <path d="M17 22H23M20 19V25" stroke="#0071e3" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
-  </div>
-  <h1>Guía Preanestésica<br>para Pacientes</h1>
-  <p>Todo lo que necesitas saber antes de tu procedimiento para una recuperación más rápida y segura.</p>
-  <div class="hero-badge">
-    <div class="dot"></div>
-    Tu seguridad es nuestra prioridad
-  </div>
+    <div class="footer-note">
+        Guía Preanestésica Oficial · Página 1 de 5 · Dr. Jhonatan Guevara Marín
+    </div>
 </div>
 
-<!-- NOTICE -->
-<div class="notice">
-  <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#e5a00a" stroke-width="1.5"/><path d="M10 6V11" stroke="#e5a00a" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="14" r="1" fill="#e5a00a"/></svg>
-  <span><strong>Aviso importante:</strong> Este material es educativo y no reemplaza la consulta médica presencial. Siga siempre las indicaciones de su anestesiólogo.</span>
-</div>
+<!-- PAGE 2: AYUNO PREOPERATORIO -->
+<div class="page">
+    <div class="header">
+        <span class="header-logo">Dr. Jhonatan Guevara</span>
+        <span class="header-title">Pautas de Ayuno Preoperatorio</span>
+    </div>
 
-<div class="wrapper">
+    <h1>2. El Ayuno Preoperatorio: La Regla del 2-4-6-8</h1>
+    <p>El ayuno no es un capricho médico, es una <strong>medida de seguridad vital</strong> respaldada por las guías clínicas mundiales de la ASA y la ESAIC. Cuando pierdes la conciencia por la anestesia, tus reflejos de protección se apagan. Si tienes comida en el estómago, esta puede regresar al esófago e ingresar a los pulmones, causando una complicación grave llamada <strong>broncoaspiración</strong>.</p>
+    
+    <h2>Tiempos de Ayuno Clínico Oficial (Pauta ASA 2023)</h2>
+    <p>Debes cumplir estrictamente con los siguientes tiempos mínimos de ayuno antes de tu hora programada de ingreso a sala:</p>
 
-  <!-- SECCIÓN 1: INFORMACIÓN CRÍTICA -->
-  <div class="section-block">
-    <div class="section-header">
-      <div class="section-num">1</div>
-      <h2>Información crítica para su anestesiólogo</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Tipo de Alimento</th>
+                    <th style="width: 25%;">Ayuno Mínimo</th>
+                    <th style="width: 45%;">Ejemplos y Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Líquidos Claros</strong></td>
+                    <td><span class="pill pill-blue">2 Horas</span></td>
+                    <td>Agua sola, té o café negro (sin leche), bebidas hidratantes sin pulpa ni grasas.</td>
+                </tr>
+                <tr>
+                    <td><strong>Leche Materna</strong></td>
+                    <td><span class="pill pill-green">4 Horas</span></td>
+                    <td>Aplica exclusivamente para lactantes que consumen leche materna directa.</td>
+                </tr>
+                <tr>
+                    <td><strong>Fórmula Lactante / Leche</strong></td>
+                    <td><span class="pill pill-amber">6 Horas</span></td>
+                    <td>Leche de fórmula infantil, leche de vaca u otros mamíferos, y jugos con pulpa.</td>
+                </tr>
+                <tr>
+                    <td><strong>Comida Ligera</strong></td>
+                    <td><span class="pill pill-amber">6 Horas</span></td>
+                    <td>Una tostada con mermelada (sin mantequilla), té con galletas de agua.</td>
+                </tr>
+                <tr>
+                    <td><strong>Comida Completa o Copiosa</strong></td>
+                    <td><span class="pill pill-red">8 Horas</span></td>
+                    <td>Cualquier comida que incluya frituras, grasas, carnes, lácteos enteros o quesos.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger">
+        <div class="alert-title">¡Atención! ¿Qué NO es un líquido claro?</div>
+        <p>Los caldos de sopa, la leche (incluso descremada), los yogures, los jugos con pulpa (como mango o naranja licuada) y las bebidas alcohólicas <strong>no son líquidos claros</strong> y requieren un mínimo de 6 a 8 horas de ayuno.</p>
     </div>
 
     <div class="card">
-      <div class="info-item">
-        <div class="info-icon blue">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="#0071e3" stroke-width="1.5"/><path d="M6.5 7H13.5M6.5 10H13.5M6.5 13H10" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="card-title">
+            <span class="pill pill-blue" style="font-size:10px;">Fisiología</span>
+            <strong>¿Por qué se recomiendan líquidos claros hasta 2 horas antes?</strong>
         </div>
-        <div class="info-text">
-          <strong>Historial médico completo</strong>
-          <p>Enfermedades crónicas (diabetes, hipertensión, enfermedades del corazón o pulmón), cirugías previas y alergias conocidas — especialmente a medicamentos o látex.</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon teal">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C10 3 4 6 4 11.5C4 14.5 6.7 17 10 17C13.3 17 16 14.5 16 11.5C16 6 10 3 10 3Z" stroke="#00b48a" stroke-width="1.5"/><path d="M10 9V13M8 11H12" stroke="#00b48a" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <div class="info-text">
-          <strong>Medicamentos actuales</strong>
-          <p>Lista completa con nombre, dosis y frecuencia. Incluya vitaminas, suplementos naturales, anticoagulantes y medicamentos sin receta. Algunos deben suspenderse días antes.</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon amber">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L12.4 7.6L18.5 8.4L14 12.7L15.2 18.8L10 16L4.8 18.8L6 12.7L1.5 8.4L7.6 7.6L10 2Z" stroke="#ff9500" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="info-text">
-          <strong>Hábitos relevantes</strong>
-          <p>Consumo de tabaco, vapeo, alcohol o cualquier sustancia. Estos factores afectan directamente la dosis y el tipo de anestesia a utilizar.</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <div class="info-icon red">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#ff3b30" stroke-width="1.5"/><path d="M10 7V10.5" stroke="#ff3b30" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="13.5" r="1" fill="#ff3b30"/></svg>
-        </div>
-        <div class="info-text">
-          <strong>Estado actual de salud</strong>
-          <p>Informe si está embarazada, en periodo de lactancia, o si presenta fiebre, tos, resfriado o cualquier malestar en los días previos al procedimiento.</p>
-        </div>
-      </div>
+        <p>Los líquidos claros se absorben muy rápido y estimulan el vaciamiento gástrico, disminuyendo la acidez del estómago. Esto evita deshidrataciones severas y dolores de cabeza preoperatorios innecesarios. Sin embargo, recuerda detener todo consumo exactamente 2 horas antes.</p>
     </div>
 
-    <!-- Qué traer -->
-    <div class="card" style="background: var(--blue-light); box-shadow: none;">
-      <p style="font-size: 13px; font-weight: 700; color: var(--blue-dark); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px;">Qué traer a la consulta</p>
-      <div class="bring-list">
-        <div class="bring-item">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="4" width="14" height="12" rx="2" stroke="#0071e3" stroke-width="1.5"/><path d="M7 4V3M13 4V3" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/><path d="M6 9H14M6 12H10" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span>Documento de identidad</span>
-        </div>
-        <div class="bring-item">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 3H15C15.6 3 16 3.4 16 4V16C16 16.6 15.6 17 15 17H5C4.4 17 4 16.6 4 16V4C4 3.4 4.4 3 5 3Z" stroke="#0071e3" stroke-width="1.5"/><path d="M7 7H13M7 10H13M7 13H10" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span>Órdenes médicas</span>
-        </div>
-        <div class="bring-item">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3C10 3 4 6 4 11.5C4 14.5 6.7 17 10 17C13.3 17 16 14.5 16 11.5C16 6 10 3 10 3Z" stroke="#0071e3" stroke-width="1.5"/><path d="M7 10H13M10 7V13" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span>Exámenes de laboratorio</span>
-        </div>
-        <div class="bring-item">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="4" y="3" width="12" height="14" rx="2" stroke="#0071e3" stroke-width="1.5"/><path d="M7 7H13M7 10H11" stroke="#0071e3" stroke-width="1.5" stroke-linecap="round"/><circle cx="13" cy="14" r="3" fill="#0071e3"/><path d="M12 14H14M13 13V15" stroke="white" stroke-width="1.2" stroke-linecap="round"/></svg>
-          <span>Lista de fármacos con dosis</span>
-        </div>
-      </div>
+    <div class="footer-note">
+        Guía Preanestésica Oficial · Página 2 de 5 · Dr. Jhonatan Guevara Marín
     </div>
-  </div>
-
-  <!-- SECCIÓN 2: PREPARACIÓN -->
-  <div class="section-block">
-    <div class="section-header">
-      <div class="section-num">2</div>
-      <h2>Preparación paso a paso</h2>
-    </div>
-
-    <div class="timeline">
-
-      <div class="tl-item">
-        <div class="tl-dot">48h</div>
-        <div class="tl-content">
-          <h3>48 horas antes</h3>
-          <ul>
-            <li>Confirme la hora exacta de su procedimiento</li>
-            <li>Consulte con su médico qué medicamentos debe suspender</li>
-            <li>Organice su transporte de regreso con un acompañante adulto de confianza</li>
-            <li>Resuelva dudas con su anestesiólogo — use la lista de preguntas de la sección 3</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">24h</div>
-        <div class="tl-content">
-          <h3>La noche anterior</h3>
-          <ul>
-            <li>Cene de forma ligera — evite alimentos pesados o con alto contenido graso</li>
-            <li>No consuma alcohol bajo ningún motivo</li>
-            <li>Retire joyas, piercings, maquillaje y esmalte de uñas</li>
-            <li>Descanse bien — dormir bien favorece una mejor recuperación</li>
-            <li>Respete estrictamente el ayuno indicado por su médico</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-dot">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="white" stroke-width="1.5"/><path d="M9 5V9L12 11" stroke="white" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <div class="tl-content">
-          <h3>El día del procedimiento</h3>
-          <ul>
-            <li>Use ropa cómoda, holgada y fácil de retirar</li>
-            <li>Deje objetos de valor y grandes sumas de dinero en casa</li>
-            <li>Al llegar: informe si usa prótesis dentales, lentes de contacto o audífonos</li>
-            <li>Avise si presenta algún síntoma nuevo (fiebre, tos, malestar)</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SECCIÓN 3: PREGUNTAS -->
-  <div class="section-block">
-    <div class="section-header">
-      <div class="section-num">3</div>
-      <h2>Preguntas recomendadas para su consulta</h2>
-    </div>
-
-    <div class="card">
-      <p style="font-size: 14px; color: var(--gray-sub); margin-bottom: 20px;">Llevar estas preguntas escritas le ayudará a aprovechar mejor el tiempo con su anestesiólogo y a tomar decisiones informadas:</p>
-
-      <div class="question-item">
-        <div class="q-num">1</div>
-        <p>¿Qué tipo de anestesia es la más adecuada para mi caso específico y por qué?</p>
-      </div>
-      <div class="question-item">
-        <div class="q-num">2</div>
-        <p>¿Cómo se manejará el dolor durante y después de la cirugía?</p>
-      </div>
-      <div class="question-item">
-        <div class="q-num">3</div>
-        <p>¿Cuándo podré retomar la ingesta de alimentos y líquidos tras el procedimiento?</p>
-      </div>
-      <div class="question-item">
-        <div class="q-num">4</div>
-        <p>¿Cuáles son los riesgos asociados a la anestesia en mi caso particular?</p>
-      </div>
-      <div class="question-item">
-        <div class="q-num">5</div>
-        <p>¿Cuáles son los signos de alarma por los que debería contactarlos después del procedimiento?</p>
-      </div>
-      <div class="question-item">
-        <div class="q-num">6</div>
-        <p>¿Necesito algún examen o evaluación adicional antes de la cirugía?</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECCIÓN 4: ERRORES -->
-  <div class="section-block">
-    <div class="section-header">
-      <div class="section-num" style="background:#ff3b30;">!</div>
-      <h2>Errores que debe evitar</h2>
-    </div>
-
-    <div class="warning-grid">
-      <div class="warning-card">
-        <div class="w-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L16 15H2L9 2Z" stroke="#c0392b" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 7V10" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="13" r="1" fill="#c0392b"/></svg>
-        </div>
-        <h4>Ocultar información</h4>
-        <p>No omita ningún medicamento, suplemento o sustancia que consuma. Esta información es esencial para su seguridad.</p>
-      </div>
-      <div class="warning-card">
-        <div class="w-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#c0392b" stroke-width="1.5"/><path d="M6 9H12M9 6L9 12" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/><path d="M6 6L12 12" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h4>Incumplir el ayuno</h4>
-        <p>No coma ni beba nada fuera del horario indicado. El incumplimiento puede obligar a cancelar o posponer el procedimiento.</p>
-      </div>
-      <div class="warning-card">
-        <div class="w-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="3" y="6" width="12" height="9" rx="1.5" stroke="#c0392b" stroke-width="1.5"/><path d="M6 6V4.5C6 3.1 7.1 2 8.5 2H9.5C10.9 2 12 3.1 12 4.5V6" stroke="#c0392b" stroke-width="1.5"/><circle cx="9" cy="11" r="1.5" fill="#c0392b"/></svg>
-        </div>
-        <h4>Automedicarse</h4>
-        <p>No suspenda ni modifique ningún medicamento habitual sin consultarlo previamente con su médico o anestesiólogo.</p>
-      </div>
-      <div class="warning-card">
-        <div class="w-icon">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2C5.1 2 2 5.1 2 9s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7Z" stroke="#c0392b" stroke-width="1.5"/><path d="M9 5v5M9 13h.01" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h4>Asistir con síntomas</h4>
-        <p>Si presenta fiebre, tos, resfriado o cualquier malestar en los días previos, avise a su equipo médico de inmediato.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- SECCIÓN 5: EL DÍA -->
-  <div class="section-block">
-    <div class="section-header">
-      <div class="section-num" style="background: var(--green);">✓</div>
-      <h2>Checklist del día del procedimiento</h2>
-    </div>
-
-    <div class="procedure-grid">
-      <div class="proc-card">
-        <div class="p-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 4 7 4 14C4 17.3 7.1 20 12 20C16.9 20 20 17.3 20 14C20 7 12 2 12 2Z" stroke="#1a7a35" stroke-width="1.5"/><path d="M9 12L11 14L15 10" stroke="#1a7a35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h4>Ropa cómoda</h4>
-        <p>Prendas holgadas y fáciles de retirar, sin objetos de metal.</p>
-      </div>
-      <div class="proc-card">
-        <div class="p-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1a7a35" stroke-width="1.5"/><path d="M12 7V12L15 14" stroke="#1a7a35" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h4>Llegue puntual</h4>
-        <p>Con al menos 30 minutos de anticipación para los trámites de admisión.</p>
-      </div>
-      <div class="proc-card">
-        <div class="p-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#1a7a35" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#1a7a35" stroke-width="1.5"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#1a7a35" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h4>Acompañante adulto</h4>
-        <p>Es obligatorio tener a alguien que lo lleve de regreso a casa.</p>
-      </div>
-      <div class="proc-card">
-        <div class="p-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="#1a7a35" stroke-width="1.5"/><path d="M2 10H22" stroke="#1a7a35" stroke-width="1.5"/><path d="M6 15H10" stroke="#1a7a35" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h4>Sin objetos de valor</h4>
-        <p>Deje joyas, efectivo y objetos costosos en casa o con un familiar.</p>
-      </div>
-      <div class="proc-card">
-        <div class="p-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.9 8.6L22 9.6L17 14.4L18.2 21.5L12 18L5.8 21.5L7 14.4L2 9.6L9.1 8.6L12 2Z" stroke="#1a7a35" stroke-width="1.5" stroke-linejoin="round"/></svg>
-        </div>
-        <h4>Informe al llegar</h4>
-        <p>Notifique si usa prótesis dentales, lentes de contacto o audífonos.</p>
-      </div>
-      <div class="proc-card">
-        <div class="p-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 12H15M12 9V15M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10Z" stroke="#1a7a35" stroke-width="1.5" stroke-linecap="round"/></svg>
-        </div>
-        <h4>Comunique síntomas</h4>
-        <p>Informe de inmediato si presenta fiebre, tos o malestar ese día.</p>
-      </div>
-    </div>
-  </div>
-
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <strong>La preparación adecuada reduce riesgos y asegura una recuperación más rápida.</strong><br>
-  <span>Este material es de carácter educativo. No reemplaza la evaluación médica individualizada.<br>
-  Consulte siempre con su equipo de salud ante cualquier duda.</span>
-</footer>
+<!-- PAGE 3: MANEJO DE MEDICAMENTOS -->
+<div class="page">
+    <div class="header">
+        <span class="header-logo">Dr. Jhonatan Guevara</span>
+        <span class="header-title">Manejo de Medicación Habitual</span>
+    </div>
 
-</body>
-</html>
+    <h1>3. Medicamentos: ¿Cuáles tomar y cuáles suspender?</h1>
+    <p>Muchos medicamentos interactúan con los anestésicos o alteran la coagulación. Es crítico clasificar tu medicación habitual según los protocolos de seguridad clínica:</p>
+
+    <h2>1. Medicamentos que SÍ deben tomarse (con un mínimo sorbo de agua)</h2>
+    <p>Por lo general, no debes suspender tu medicación para la presión o el corazón que pertenezca a las siguientes clases, ya que suspenderlas abruptamente puede provocar crisis hipertensivas o arritmias en sala:</p>
+    <ul>
+        <li><strong>Beta-bloqueadores:</strong> Atenolol, Metoprolol, Carvedilol, Bisoprolol.</li>
+        <li><strong>Calcioantagonistas:</strong> Amlodipino, Nifedipino, Verapamilo.</li>
+        <li><strong>Medicamentos de la tiroides:</strong> Levotiroxina (debe tomarse a primera hora como es habitual).</li>
+    </ul>
+
+    <h2>2. Medicamentos que obligatoriamente DEBEN SUSPENDERSE</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Medicamento</th>
+                    <th style="width: 25%;">Cuándo Suspender</th>
+                    <th style="width: 45%;">Razón Clínica / Riesgo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>IECA / ARA II</strong><br>(Enalapril, Losartán, Valsartán)</td>
+                    <td><span class="pill pill-amber">24 Horas Antes</span></td>
+                    <td>Riesgo de hipotensión severa y refractaria (presión muy baja difícil de revertir) durante la inducción de la anestesia.</td>
+                </tr>
+                <tr>
+                    <td><strong>Metformina</strong></td>
+                    <td><span class="pill pill-amber">24 a 48 Horas</span></td>
+                    <td>Riesgo de desarrollar acidosis láctica (complicación grave en la sangre), especialmente si se emplean sustancias de contraste.</td>
+                </tr>
+                <tr>
+                    <td><strong>Inhibidores SGLT2</strong><br>(Dapagliflozina, Empagliflozina)</td>
+                    <td><span class="pill pill-red">3 Días Antes</span></td>
+                    <td>Riesgo de cetoacidosis diabética euglicémica (una alteración metabólica grave con niveles de azúcar aparentemente normales).</td>
+                </tr>
+                <tr>
+                    <td><strong>Anticoagulantes</strong><br>(Warfarina)</td>
+                    <td><span class="pill pill-red">5 Días Antes</span></td>
+                    <td>Riesgo de sangrado quirúrgico severo. Requiere control de INR (<1.5) y, según el caso, terapia puente con Enoxaparina.</td>
+                </tr>
+                <tr>
+                    <td><strong>Antiagregantes</strong><br>(Clopidogrel, Prasugrel)</td>
+                    <td><span class="pill pill-red">5 a 7 Días</span></td>
+                    <td>Evita hemorragias incontrolables en el sitio quirúrgico o hematomas en anestesia epidural.</td>
+                </tr>
+                <tr>
+                    <td><strong>Suplementos y Vitaminas</strong><br>(Ginkgo Biloba, Ajo, Ginseng)</td>
+                    <td><span class="pill pill-amber">7 Días Antes</span></td>
+                    <td>Alteran la coagulación normal e incrementan el tiempo de sangrado. La valeriana prolonga el sueño anestésico.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="alert alert-danger">
+        <div class="alert-title">Importante: Regla de Oro sobre Diabetes</div>
+        <p>Si usas <strong>insulina</strong>, la mañana de la cirugía debes **suspender la dosis de acción rápida** porque estarás en ayuno, y reducir la dosis de insulina basal según indicación médica para evitar hipoglucemias graves en el quirófano.</p>
+    </div>
+
+    <div class="footer-note">
+        Guía Preanestésica Oficial · Página 3 de 5 · Dr. Jhonatan Guevara Marín
+    </div>
+</div>
+
+<!-- PAGE 4: TIPOS DE ANESTESIA Y SEGURIDAD -->
+<div class="page">
+    <div class="header">
+        <span class="header-logo">Dr. Jhonatan Guevara</span>
+        <span class="header-title">Tipos de Anestesia y Seguridad</span>
+    </div>
+
+    <h1>4. Tipos de Anestesia y la Lista de Seguridad OMS</h1>
+    <p>El plan anestésico se diseña de manera personalizada según tus antecedentes y el tipo de procedimiento:</p>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-title">
+                <div class="icon-box icon-box-blue">🧠</div>
+                <strong>Anestesia General</strong>
+            </div>
+            <p style="font-size:12px; margin:0;">Inconsciencia total y ausencia de dolor en todo el cuerpo. Requiere control de la respiración con un ventilador mecánico y dispositivos avanzados de vía aérea. Ideal para cirugías mayores de tórax, abdomen alto o neurocirugía.</p>
+        </div>
+        <div class="card">
+            <div class="card-title">
+                <div class="icon-box icon-box-green">💉</div>
+                <strong>Anestesia Regional</strong>
+            </div>
+            <p style="font-size:12px; margin:0;">Se bloquea el dolor en una región del cuerpo (ej. de la cintura hacia abajo usando anestesia raquídea o epidural). Permaneces despierto o con sedación leve, sintiéndote relajado y cómodo sin percibir dolor.</p>
+        </div>
+    </div>
+
+    <h2>Detrás de Escena: La Lista de Chequeo de Cirugía Segura (OMS)</h2>
+    <p>La Organización Mundial de la Salud (OMS) y el MINSA establecen una lista de verificación obligatoria en quirófano dividida en tres etapas críticas, en las cuales participas activamente:</p>
+
+    <div class="checklist-container">
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h4>1. Entrada (Sign In) — Antes de la inducción anestésica</h4>
+                <p>El anestesiólogo y enfermería confirman verbalmente contigo: tu identidad, el sitio quirúrgico exacto, el procedimiento a realizar, tu consentimiento firmado, si tienes alergias y el tiempo de ayuno cumplido.</p>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h4>2. Pausa Quirúrgica (Time Out) — Antes de la incisión en piel</h4>
+                <p>Todo el equipo detiene sus labores para confirmar en voz alta el nombre del paciente, el procedimiento exacto, si se administró el antibiótico preventivo en los últimos 60 minutos y los pasos críticos planeados.</p>
+            </div>
+        </div>
+        <div class="checklist-item">
+            <div class="checkbox"></div>
+            <div class="checklist-content">
+                <h4>3. Salida (Sign Out) — Antes de que el paciente salga del quirófano</h4>
+                <p>Se realiza el conteo exacto de gasas, agujas e instrumental para asegurar que nada quede dentro del paciente, se rotulan las muestras biológicas con tus datos completos y se define el plan analgésico de recuperación.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        Guía Preanestésica Oficial · Página 4 de 5 · Dr. Jhonatan Guevara Marín
+    </div>
+</div>
+
+<!-- PAGE 5: PREGUNTAS Y ERRORES -->
+<div class="page">
+    <div class="header">
+        <span class="header-logo">Dr. Jhonatan Guevara</span>
+        <span class="header-title">Preguntas y Errores Críticos</span>
+    </div>
+
+    <h1>5. Preguntas Clave y Errores a Evitar</h1>
+    <p>Preparar tus dudas con anticipación reduce la ansiedad. A continuación, te sugerimos preguntas clave y los errores más comunes que debes evitar para asegurar un procedimiento exitoso.</p>
+
+    <h2>Preguntas Recomendadas para tu Consulta</h2>
+    <p>Usa esta lista para guiar la conversación con tu anestesiólogo antes de ingresar al quirófano:</p>
+    <ol>
+        <li><strong>¿Qué tipo de anestesia es la más segura para mí</strong> considerando mis antecedentes médicos?</li>
+        <li><strong>¿Cuáles son los riesgos particulares de la anestesia en mi caso</strong> y cómo se previenen?</li>
+        <li><strong>¿Qué medicamentos debo suspender y cuáles tomar</strong> la mañana de la cirugía?</li>
+        <li><strong>¿Cómo se controlará mi dolor al despertar</strong> y en los días posteriores a la cirugía?</li>
+        <li><strong>¿Cuáles son los signos de alarma</strong> que debo observar durante mi recuperación en casa?</li>
+    </ol>
+
+    <h2>Errores Críticos que Debes Evitar obligatoriamente</h2>
+    <p>Cometer estos errores puede poner en riesgo tu vida o causar la cancelación inmediata de tu cirugía:</p>
+
+    <div class="card-grid">
+        <div class="card" style="border-left: 4px solid var(--color-red);">
+            <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Ocultar Antecedentes o Hábitos</strong>
+            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">No declarar el consumo de alcohol, tabaco, vapeo o medicamentos naturales altera el cálculo de dosis y puede causar arritmias o despertar superficial en sala.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-red);">
+            <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Desobedecer las Horas de Ayuno</strong>
+            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">Comer caramelos, chicles, tomar café con leche o agua poco antes de la cirugía incrementa el riesgo de broncoaspiración a nivel pulmonar.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-red);">
+            <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Omitir Síntomas de Infección</strong>
+            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">Ingresar a sala con tos, congestión nasal, fiebre o malestar estomacal eleva el riesgo de espasmo bronquial o complicaciones respiratorias bajo anestesia.</p>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--color-red);">
+            <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Automedicarse</strong>
+            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">Tomar aspirinas o antiinflamatorios (Ibuprofeno/Naproxeno) por dolor o nervios antes de la cirugía incrementa severamente el riesgo de sangrado.</p>
+        </div>
+    </div>
+
+    <div class="alert alert-success">
+        <div class="alert-title">Recuerda: Tu seguridad es un trabajo en equipo</div>
+        <p>Proporcionar información verídica, respetar el ayuno y seguir las indicaciones médicas de tu anestesiólogo son las herramientas más poderosas para garantizar una cirugía sin complicaciones. ¡Tu salud es lo primero!</p>
+    </div>
+
+    <div class="footer-note">
+        Guía Preanestésica Oficial · Página 5 de 5 · Dr. Jhonatan Guevara Marín
+    </div>
+</div>
