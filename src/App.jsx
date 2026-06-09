@@ -1,27 +1,22 @@
 import React, { useMemo, useState, useEffect } from "react";
 import Store from "./Store";
 import LegalPage from "./Legal";
-import { CookieBanner, SobreNosotros, CulqiChecklist } from "./CulqiCompliance";
+import { CookieBanner, SobreNosotros } from "./CulqiCompliance";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   AlertTriangle,
   ArrowRight,
   BookOpen,
-  CalendarDays,
   CheckCircle2,
   ClipboardCheck,
-  CreditCard,
   Download,
   FileText,
   HeartPulse,
-  Lock,
   Mail,
   MapPin,
   Menu,
   MessageCircle,
   ShieldCheck,
-  Sparkles,
-  Star,
   Stethoscope,
   UserRound,
   Video,
@@ -29,8 +24,8 @@ import {
   ChevronDown,
   Phone,
   Clock,
-  Award,
   Info,
+  Smartphone,
 } from "lucide-react";
 
 /* ─────────────────────── DATA ─────────────────────── */
@@ -95,8 +90,8 @@ const products = [
   {
     title: "Guía preanestésica para pacientes",
     type: "PDF descargable",
-    price: "S/ 39",
-    priceNum: 39,
+    price: "S/ 29",
+    priceNum: 29,
     description:
       "Qué contarle al anestesiólogo, cómo prepararte, qué preguntar y qué errores evitar antes de una cirugía. Material educativo, no reemplaza consulta médica.",
     badge: "Más popular",
@@ -106,8 +101,8 @@ const products = [
   {
     title: "Checklist para cirugía segura",
     type: "PDF imprimible",
-    price: "S/ 19",
-    priceNum: 19,
+    price: "S/ 15",
+    priceNum: 15,
     description:
       "Lista práctica para organizar documentos, medicamentos, tiempos de ayuno, acompañante y preguntas importantes antes del procedimiento.",
     badge: "Entrada económica",
@@ -117,8 +112,8 @@ const products = [
   {
     title: "Mini curso: Pierde el miedo a la anestesia",
     type: "Video + PDF",
-    price: "S/ 79",
-    priceNum: 79,
+    price: "S/ 49",
+    priceNum: 49,
     description:
       "Contenido educativo con lenguaje sencillo sobre los tipos de anestesia, recuperación, manejo del dolor y preguntas frecuentes de pacientes.",
     badge: "Curso completo",
@@ -139,7 +134,7 @@ const steps = [
     description: "Ordena tus antecedentes, medicamentos, alergias, cirugías previas y exámenes disponibles.",
   },
   {
-    icon: CreditCard,
+    icon: Smartphone,
     title: "Realiza el pago por Yape o Plin",
     description: "Pago manual inicial. Se verificará y se enviará confirmación de la cita.",
   },
@@ -390,6 +385,33 @@ function IntakeForm() {
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    const msgText = [
+      `*Formulario preanestésico*`,
+      ``,
+      `*Nombre:* ${form.nombre}`,
+      `*Edad:* ${form.edad}`,
+      `*Teléfono:* ${form.telefono}`,
+      `*Correo:* ${form.correo}`,
+      `*Ciudad:* ${form.ciudad || "No indicada"}`,
+      `*Fecha aprox. de cirugía:* ${form.fechaCirugia || "No indicada"}`,
+      `*Tipo de cirugía:* ${form.tipoCirugia}`,
+      `*Clínica/hospital:* ${form.clinica || "No indicada"}`,
+      `*Antecedentes:* ${form.antecedentes || "Ninguno indicado"}`,
+      `*Medicamentos:* ${form.medicamentos || "Ninguno indicado"}`,
+      `*Alergias:* ${form.alergias || "Ninguna indicada"}`,
+      `*Cirugías previas:* ${form.cirugiasPrevias || "Ninguna indicada"}`,
+      `*Dudas principales:* ${form.dudas || "Sin dudas adicionales"}`,
+    ].join("\n");
+    navigator.clipboard.writeText(msgText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {
+      alert("No se pudo copiar automáticamente. Por favor, copia el texto manualmente.");
+    });
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -456,7 +478,7 @@ function IntakeForm() {
         </div>
         <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-950">¡Formulario completado!</h3>
         <p className="mt-3 text-sm leading-7 text-slate-600">
-          Ahora envía la información por WhatsApp para confirmar tu cita y coordinar el pago.
+          Envía la información por WhatsApp para confirmar tu cita. Si el enlace no abre, puedes copiar el resumen de tus respuestas usando el botón de copiar.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row justify-center">
           <a
@@ -469,12 +491,15 @@ function IntakeForm() {
               Enviar por WhatsApp
             </Button>
           </a>
+          <Button variant="secondary" onClick={handleCopy}>
+            {copied ? "¡Copiado! ✓" : "Copiar respuestas 📋"}
+          </Button>
           <Button variant="secondary" onClick={() => setSubmitted(false)}>
             Editar información
           </Button>
         </div>
         <p className="mt-5 text-xs text-slate-400">
-          Al presionar el botón se abrirá WhatsApp con tu información. El pago se coordina después de la confirmación.
+          Al presionar el botón se abrirá WhatsApp. El pago se coordina por Yape o Plin tras la confirmación de la cita.
         </p>
       </div>
     );
@@ -757,7 +782,7 @@ export default function App() {
             <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
               {[
                 ["Google Meet", "Consulta virtual"],
-                ["S/ 150", "Precio inicial"],
+                ["S/ 99", "Precio inicial"],
                 ["Yape / Plin", "Forma de pago"],
               ].map(([val, label]) => (
                 <div key={label} className="rounded-3xl border border-white/60 bg-white/70 p-4 shadow-lg shadow-slate-200/60 backdrop-blur text-center">
@@ -847,7 +872,7 @@ export default function App() {
               <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Precio inicial sugerido</p>
-                  <p className="mt-2 text-5xl font-semibold tracking-tight">S/ 150</p>
+                  <p className="mt-2 text-5xl font-semibold tracking-tight">S/ 99</p>
                   <p className="mt-2 text-sm text-slate-500">Pago manual por Yape o Plin. Reserva confirmada tras verificar el pago.</p>
                 </div>
                 <a href={doctor.whatsappUrl} target="_blank" rel="noreferrer">
@@ -1094,7 +1119,7 @@ export default function App() {
                   [Video, "Modalidad", doctor.meet],
                   [Phone, "WhatsApp", doctor.whatsapp],
                   [Mail, "Correo", doctor.email],
-                  [CreditCard, "Pagos", "Yape / Plin (manual)"],
+                  [Smartphone, "Pagos", "Yape / Plin (manual)"],
                 ].map(([Icon, label, value]) => (
                   <p key={label} className="flex items-center gap-3 text-white/70">
                     <Icon className="h-4 w-4 shrink-0 text-white/40" />

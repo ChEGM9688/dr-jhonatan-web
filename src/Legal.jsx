@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ChevronDown,
   BookOpen,
-  RefreshCw,
   FileText,
   CheckCircle2,
   AlertTriangle,
@@ -15,36 +14,7 @@ import {
 const DOCTOR_EMAIL = "dr.guevaramarin@gmail.com";
 const WHATSAPP = "51943740001";
 
-const refundPolicy = [
-  {
-    title: "1. Alcance de la política",
-    body: "Esta política aplica a todos los productos digitales y servicios de orientación virtual ofrecidos por el Dr. Jhonatan Guevara Marín, médico anestesiólogo, CMP 074566, RNE 051391, a través de esta plataforma.",
-  },
-  {
-    title: "2. Productos digitales (guías, checklists, cursos)",
-    body: "Los productos digitales son entregados por correo electrónico o WhatsApp dentro de las 24 horas hábiles siguientes al pago confirmado. Una vez entregado y descargado el producto, no procede reembolso, ya que el contenido es de naturaleza digital e intangible. Si el archivo presenta un error técnico o está incompleto, se reemplazará sin costo en un plazo máximo de 48 horas hábiles.",
-  },
-  {
-    title: "3. Consulta preanestésica virtual (Google Meet)",
-    body: "La reserva queda confirmada tras verificar el pago. El paciente puede reprogramar la consulta sin costo con un mínimo de 24 horas de anticipación, comunicándose por WhatsApp al +51 943 740 001. Las cancelaciones realizadas con menos de 24 horas de anticipación no dan derecho a reembolso. En caso de cancelación por parte del prestador (fuerza mayor, emergencia), se ofrecerá reprogramación o reembolso total en un plazo de 5 días hábiles.",
-  },
-  {
-    title: "4. Proceso para solicitar reembolso o reclamo",
-    body: "El consumidor debe escribir al correo dr.guevaramarin@gmail.com o al WhatsApp +51 943 740 001 indicando: nombre completo, fecha de compra, producto adquirido, monto pagado y motivo de la solicitud. Se responderá en un plazo máximo de 5 días hábiles. Alternativamente, puede registrar su reclamo en el Libro de Reclamaciones disponible en esta misma página.",
-  },
-  {
-    title: "5. Cambios de producto",
-    body: "Si el consumidor adquirió un producto por error, puede solicitar el cambio por otro de igual o mayor valor dentro de las 24 horas siguientes a la compra, siempre que el producto original no haya sido entregado. Pasado ese plazo o una vez entregado el producto, no procede cambio.",
-  },
-  {
-    title: "6. Medios de devolución",
-    body: "Los reembolsos aprobados se realizarán por el mismo medio de pago utilizado en la compra (tarjeta de crédito/débito vía Culqi, Yape o Plin) en un plazo máximo de 10 días hábiles desde la aprobación de la solicitud.",
-  },
-  {
-    title: "7. Marco legal aplicable",
-    body: "Esta política se rige por el Código de Protección y Defensa del Consumidor del Perú (Ley N.° 29571) y las normas complementarias emitidas por INDECOPI. El consumidor puede presentar una queja ante INDECOPI en caso de no recibir respuesta satisfactoria.",
-  },
-];
+
 
 const complaintTypes = [
   { value: "reclamo", label: "Reclamo (disconformidad con el producto o servicio recibido)" },
@@ -52,10 +22,10 @@ const complaintTypes = [
 ];
 
 const productOptions = [
-  "Guía preanestésica para pacientes (S/ 39)",
-  "Checklist para cirugía segura (S/ 19)",
-  "Mini curso: Pierde el miedo a la anestesia (S/ 79)",
-  "Consulta preanestésica virtual (S/ 150)",
+  "Guía preanestésica para pacientes (S/ 29)",
+  "Checklist para cirugía segura (S/ 15)",
+  "Mini curso: Pierde el miedo a la anestesia (S/ 49)",
+  "Consulta preanestésica virtual (S/ 99)",
   "Otro",
 ];
 
@@ -367,7 +337,6 @@ export default function LegalPage() {
 
   const tabs = [
     { id: "terminos", label: "Términos y condiciones", icon: FileText },
-    { id: "devoluciones", label: "Cambios y devoluciones", icon: RefreshCw },
     { id: "reclamaciones", label: "📋 Libro de reclamaciones", icon: BookOpen },
   ];
 
@@ -386,7 +355,7 @@ export default function LegalPage() {
         </h2>
         <p className="mt-5 text-lg leading-8 text-slate-500 max-w-2xl mx-auto">
           Documentos elaborados conforme al Código de Protección del Consumidor (Ley N.° 29571),
-          la Ley N.° 29733 de Protección de Datos y los lineamientos de INDECOPI y Culqi.
+          la Ley N.° 29733 de Protección de Datos y los lineamientos de INDECOPI.
         </p>
       </div>
 
@@ -434,11 +403,12 @@ export default function LegalPage() {
                 ["3. Limitaciones del servicio", "La orientación virtual: (a) no reemplaza la evaluación presencial del anestesiólogo tratante; (b) no autoriza ni suspende procedimientos quirúrgicos; (c) no emite recetas, indicaciones de medicamentos ni diagnósticos clínicos; (d) no garantiza resultados médicos específicos; (e) no atiende urgencias ni emergencias médicas de ningún tipo."],
                 ["4. Responsabilidad del consumidor", "El paciente debe proporcionar información completa, veraz y actualizada. La omisión u ocultamiento de datos médicos relevantes puede limitar la utilidad de la orientación y exime al prestador de responsabilidad. El paciente es responsable de validar la información recibida con su equipo médico tratante."],
                 ["5. Productos digitales", "Las guías, checklists y cursos son materiales educativos de carácter general. No constituyen consultas médicas individualizadas ni sustituyen las indicaciones del médico tratante. El contenido está elaborado con criterio profesional y lenguaje accesible."],
-                ["6. Precios y pagos", "Los precios están expresados en Soles peruanos (PEN) e incluyen todos los cargos aplicables. El pago puede realizarse con tarjeta de crédito o débito mediante Culqi, o manualmente por Yape o Plin. La reserva se confirma únicamente tras verificar el pago."],
+                ["6. Precios y pagos", "Los precios están expresados en Soles peruanos (PEN). El pago se realiza de forma manual mediante Yape o Plin, coordinando directamente a través de WhatsApp. La reserva o entrega del producto se confirma únicamente tras verificar el pago."],
                 ["7. Entrega de productos", "Los productos digitales se entregan por correo electrónico o WhatsApp dentro de las 24 horas hábiles siguientes al pago confirmado. El enlace de Google Meet para la consulta virtual se envía tras confirmar el pago y acordar el horario."],
-                ["8. Emergencias", "Este servicio no atiende urgencias ni emergencias. Ante dolor intenso, dificultad respiratoria, sangrado, pérdida de conciencia u otro signo de alarma, acude al servicio de emergencias más cercano o llama a tu médico tratante. No uses este canal para situaciones de riesgo vital."],
-                ["9. Propiedad intelectual", "Todos los contenidos (textos, guías, materiales, diseño) son propiedad del Dr. Jhonatan Guevara o sus licenciantes. Queda prohibida su reproducción, distribución o uso comercial sin autorización expresa y por escrito."],
-                ["10. Jurisdicción", "Estos términos se rigen por la legislación de la República del Perú, incluyendo el Código de Protección y Defensa del Consumidor (Ley N.° 29571). Ante controversias, las partes se someten a la jurisdicción de los tribunales competentes de Juliaca, Puno, Perú."],
+                ["8. Cambios y devoluciones", "Al tratarse de productos digitales intangibles entregados de forma inmediata o en un plazo de 24 horas hábiles, una vez enviados no procede ningún tipo de cambio, devolución o reembolso. En caso de fallas técnicas o archivos corruptos, se procederá con el reenvío sin costo. Para la orientación virtual (Google Meet), el paciente puede solicitar la reprogramación de la cita sin costo con al menos 24 horas de anticipación. Las cancelaciones tardías o inasistencias no dan derecho a reembolso."],
+                ["9. Emergencias", "Este servicio no atiende urgencias ni emergencias. Ante dolor intenso, dificultad respiratoria, sangrado, pérdida de conciencia u otro signo de alarma, acude al servicio de emergencias más cercano o llama a tu médico tratante. No uses este canal para situaciones de riesgo vital."],
+                ["10. Propiedad intelectual", "Todos los contenidos (textos, guías, materiales, diseño) son propiedad del Dr. Jhonatan Guevara o sus licenciantes. Queda prohibida su reproducción, distribución o uso comercial sin autorización expresa y por escrito."],
+                ["11. Jurisdicción", "Estos términos se rigen por la legislación de la República del Perú, incluyendo el Código de Protección y Defensa del Consumidor (Ley N.° 29571). Ante controversias, las partes se someten a la jurisdicción de los tribunales competentes de Juliaca, Puno, Perú."],
               ].map(([title, body]) => (
                 <div key={title}>
                   <h4 className="font-semibold text-slate-800">{title}</h4>
@@ -449,62 +419,6 @@ export default function LegalPage() {
           </motion.div>
         )}
 
-        {activeTab === "devoluciones" && (
-          <motion.div
-            key="devoluciones"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            className="rounded-[2rem] border border-white/80 bg-white/80 p-6 shadow-xl shadow-slate-200/60 backdrop-blur-xl lg:p-8"
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-950 text-white">
-                <RefreshCw className="h-5 w-5" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-slate-950">Política de cambios y devoluciones</h3>
-                <p className="text-xs text-slate-400">Conforme a la Ley N.° 29571 · Última actualización: {new Date().toLocaleDateString("es-PE", { year: "numeric", month: "long", day: "numeric" })}</p>
-              </div>
-            </div>
-            {/* Quick summary */}
-            <div className="grid sm:grid-cols-3 gap-3 mb-6">
-              {[
-                ["📦 Productos digitales", "Sin reembolso tras entrega. Error técnico: reemplazo en 48h."],
-                ["📹 Consulta virtual", "Reprogramación gratis con 24h de anticipación."],
-                ["💳 Reembolsos aprobados", "Procesados en máx. 10 días hábiles por el mismo medio de pago."],
-              ].map(([title, desc]) => (
-                <div key={title} className="rounded-2xl bg-slate-50 border border-slate-100 p-4">
-                  <p className="text-sm font-semibold text-slate-950 mb-1">{title}</p>
-                  <p className="text-xs leading-6 text-slate-500">{desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="space-y-5">
-              {refundPolicy.map(({ title, body }) => (
-                <div key={title}>
-                  <h4 className="font-semibold text-slate-800">{title}</h4>
-                  <p className="mt-1.5 text-sm leading-7 text-slate-600">{body}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
-              <a
-                href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hola Dr. Jhonatan, quisiera solicitar información sobre devoluciones o cambios de producto.")}`}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white hover:bg-[#20bc5a] transition"
-              >
-                Consultar por WhatsApp
-              </a>
-              <a
-                href={`mailto:${DOCTOR_EMAIL}?subject=Solicitud de devolución o cambio`}
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
-              >
-                Enviar correo
-              </a>
-            </div>
-          </motion.div>
-        )}
 
         {activeTab === "reclamaciones" && (
           <motion.div

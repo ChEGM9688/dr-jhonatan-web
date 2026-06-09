@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ShoppingCart, X, CheckCircle2, CreditCard, MessageCircle,
+  ShoppingCart, X, CheckCircle2, MessageCircle,
   ArrowRight, Clock, Shield, AlertTriangle, Trash2, Tag, Send,
 } from "lucide-react";
 import {
@@ -9,19 +9,15 @@ import {
 } from "./ProductImages";
 
 /* ─── CONFIG ─── */
-// Modo PRUEBA — no cobra dinero real.
-// Cuando Culqi apruebe tu cuenta, cambia por: pk_live_TU_LLAVE_AQUI
-const CULQI_PUBLIC_KEY = "pk_test_UTCQbVaCE8j3NNnb";
 const WHATSAPP_NUMBER  = "51943740001";
 const DOCTOR_EMAIL     = "dr.guevaramarin@gmail.com";
 
-/* ─── PRODUCTOS ─── (mínimo 5 requerido por Culqi) ─── */
 export const storeProducts = [
   {
     id: "guia-preanestesica",
     title: "Guía preanestésica para pacientes",
     subtitle: "PDF descargable",
-    price: 39,
+    price: 29,
     badge: "Más popular",
     badgeColor: "#0ea5e9",
     Image: ImgGuia,
@@ -42,7 +38,7 @@ export const storeProducts = [
     id: "checklist-cirugia",
     title: "Checklist para cirugía segura",
     subtitle: "PDF imprimible",
-    price: 19,
+    price: 15,
     badge: "Económico",
     badgeColor: "#16a34a",
     Image: ImgChecklist,
@@ -63,11 +59,11 @@ export const storeProducts = [
     id: "minicurso-miedo",
     title: "Mini curso: Pierde el miedo a la anestesia",
     subtitle: "Videos + PDF complementario",
-    price: 79,
+    price: 49,
     badge: "Más completo",
     badgeColor: "#7c3aed",
     Image: ImgMiniCurso,
-    shortDesc: "Entiende la anestesia de principio a fin y llega tranquilo a tu procedimiento.",
+    shortDesc: "Entiende la anestesia de principio a fin and llega tranquilo a tu procedimiento.",
     description:
       "Curso educativo en formato video y PDF dirigido a pacientes que sienten miedo o ansiedad ante la anestesia. Explica en lenguaje accesible los tipos de anestesia, qué ocurre durante el procedimiento, cómo es el despertar y el manejo del dolor postoperatorio.",
     includes: [
@@ -84,7 +80,7 @@ export const storeProducts = [
     id: "consulta-virtual",
     title: "Consulta preanestésica virtual",
     subtitle: "Sesión por Google Meet · 45 a 60 min",
-    price: 150,
+    price: 99,
     badge: "Personalizado",
     badgeColor: "#059669",
     Image: ImgConsulta,
@@ -107,7 +103,7 @@ export const storeProducts = [
     id: "pack-preparacion",
     title: "Pack preparación completa",
     subtitle: "Guía + Checklist + Consulta virtual",
-    price: 189,
+    price: 119,
     badge: "Mejor valor",
     badgeColor: "#0f172a",
     Image: ImgPoliticaPrivacidad,
@@ -115,11 +111,11 @@ export const storeProducts = [
     description:
       "Paquete completo que combina la Guía preanestésica para pacientes (PDF), el Checklist para cirugía segura (PDF imprimible) y una consulta preanestésica virtual de 45-60 min por Google Meet. Ideal para pacientes que quieren prepararse de forma integral antes de un procedimiento quirúrgico.",
     includes: [
-      "Guía preanestésica completa en PDF (valor S/ 39)",
-      "Checklist para cirugía segura imprimible (valor S/ 19)",
-      "Consulta virtual de 45-60 min por Google Meet (valor S/ 150)",
+      "Guía preanestésica completa en PDF (valor S/ 29)",
+      "Checklist para cirugía segura imprimible (valor S/ 15)",
+      "Consulta virtual de 45-60 min por Google Meet (valor S/ 99)",
       "Resumen educativo personalizado al finalizar la consulta",
-      "Ahorro de S/ 19 respecto a compra por separado",
+      "Ahorro de S/ 24 respecto a compra por separado",
     ],
     delivery: "PDFs enviados en máx. 24 h hábiles. Enlace de consulta coordinado por WhatsApp.",
     disclaimer:
@@ -131,16 +127,7 @@ export const storeProducts = [
 /* ─── HELPERS ─── */
 function fmt(n) { return `S/ ${Number(n).toFixed(2)}`; }
 
-function loadCulqi() {
-  return new Promise((resolve, reject) => {
-    if (window.Culqi) return resolve(window.Culqi);
-    const s = document.createElement("script");
-    s.src = "https://checkout.culqi.com/js/v4";
-    s.onload = () => resolve(window.Culqi);
-    s.onerror = () => reject(new Error("No se pudo cargar Culqi"));
-    document.head.appendChild(s);
-  });
-}
+
 
 /* ─── PRODUCT CARD ─── */
 function ProductCard({ product, onAddToCart, onBuyNow }) {
@@ -309,13 +296,6 @@ function CartDrawer({ cart, onClose, onRemove, onCheckout }) {
               Los productos digitales son materiales educativos y no reemplazan la consulta médica presencial.
             </p>
           </div>
-          <button
-            onClick={() => onCheckout(cart)}
-            className="w-full flex items-center justify-center gap-2 rounded-2xl bg-slate-950 py-4 text-sm font-semibold text-white hover:bg-slate-800 transition"
-          >
-            <CreditCard className="h-4 w-4" />
-            Pagar {fmt(total)} con tarjeta
-          </button>
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
               "Hola Dr. Jhonatan, quiero adquirir:\n" +
@@ -323,10 +303,10 @@ function CartDrawer({ cart, onClose, onRemove, onCheckout }) {
               `\n\nTotal: ${fmt(total)}`
             )}`}
             target="_blank" rel="noreferrer"
-            className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-3.5 text-sm font-semibold text-white hover:bg-[#20bc5a] transition"
+            className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-4 text-sm font-semibold text-white hover:bg-[#20bc5a] transition"
           >
             <MessageCircle className="h-4 w-4" />
-            Pagar por Yape / Plin vía WhatsApp
+            Confirmar pedido por WhatsApp (Yape / Plin)
           </a>
         </div>
       )}
@@ -334,174 +314,9 @@ function CartDrawer({ cart, onClose, onRemove, onCheckout }) {
   );
 }
 
-/* ─── PAYMENT MODAL ─── */
-function PaymentModal({ product, onClose, onSuccess }) {
-  const [loading, setLoading] = useState(false);
-  const [error, setError]   = useState("");
-  const [name, setName]     = useState("");
-  const [email, setEmail]   = useState("");
-  const [accepted, setAccepted] = useState(false);
-
-  const handleCulqi = async () => {
-    if (!name.trim() || !email.trim() || !/\S+@\S+\.\S+/.test(email)) {
-      setError("Ingresa tu nombre y un correo electrónico válido.");
-      return;
-    }
-    if (!accepted) {
-      setError("Debes aceptar los Términos y Condiciones para continuar.");
-      return;
-    }
-    setError(""); setLoading(true);
-    try {
-      const Culqi = await loadCulqi();
-      Culqi.publicKey = CULQI_PUBLIC_KEY;
-      Culqi.settings({
-        title: "Dr. Jhonatan Guevara",
-        currency: "PEN",
-        description: product.title,
-        amount: product.price * 100,
-        order: `ORD-${Date.now()}`,
-      });
-      Culqi.options({ lang: "es", installments: false, modal: true });
-      Culqi.open();
-      window.culqi = () => {
-        const token = Culqi.token;
-        setLoading(false);
-        if (token) { Culqi.close(); onSuccess({ token, name, email, product }); }
-        else setError("El pago no pudo completarse. Intenta de nuevo.");
-      };
-    } catch {
-      setLoading(false);
-      setError("No se pudo iniciar el pago. Verifica tu conexión.");
-    }
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 bg-black/40 backdrop-blur-sm"
-      onClick={(e) => e.target === e.currentTarget && onClose()}
-    >
-      <motion.div
-        initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 40, opacity: 0 }}
-        className="w-full max-w-md rounded-[2rem] bg-white p-6 shadow-2xl"
-      >
-        <div className="flex items-center justify-between mb-5">
-          <h3 className="text-lg font-semibold">Confirmar compra</h3>
-          <button onClick={onClose} className="rounded-full p-2 hover:bg-slate-100 transition">
-            <X className="h-5 w-5 text-slate-500" />
-          </button>
-        </div>
-
-        {/* Product summary with image */}
-        <div className="flex items-center gap-4 rounded-2xl bg-slate-50 border border-slate-100 p-4 mb-5">
-          <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 border border-slate-100">
-            <product.Image />
-          </div>
-          <div className="flex-1">
-            <p className="text-sm font-semibold text-slate-950">{product.title}</p>
-            <p className="text-xs text-slate-400 mt-0.5">{product.subtitle}</p>
-            <p className="text-xs text-amber-700 mt-1">⚠️ {product.disclaimer}</p>
-          </div>
-          <p className="text-xl font-semibold text-slate-950 shrink-0">{fmt(product.price)}</p>
-        </div>
-
-        <div className="space-y-3 mb-5">
-          <label className="block text-sm font-medium text-slate-700">
-            Nombre completo
-            <input type="text" value={name} onChange={(e) => setName(e.target.value)}
-              placeholder="María García López"
-              className="mt-1.5 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-400 bg-white" />
-          </label>
-          <label className="block text-sm font-medium text-slate-700">
-            Correo electrónico (para recibir el producto)
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu@correo.com"
-              className="mt-1.5 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm outline-none focus:border-slate-400 bg-white" />
-          </label>
-        </div>
-
-        {error && (
-          <div className="mb-4 flex items-center gap-2 rounded-2xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
-            <AlertTriangle className="h-4 w-4 shrink-0" /> {error}
-          </div>
-        )}
-
-        {/* Checkbox T&C (requerido por Culqi) */}
-        <label className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-3 mb-4 cursor-pointer hover:bg-slate-100 transition">
-          <input type="checkbox" checked={accepted} onChange={(e) => setAccepted(e.target.checked)}
-            className="mt-1 h-4 w-4 accent-slate-950 shrink-0" />
-          <span className="text-xs leading-6 text-slate-600">
-            He leído y acepto los{" "}
-            <a href="#legal" className="underline text-slate-950 hover:text-sky-700" onClick={() => {}}>
-              Términos y Condiciones
-            </a>{" "}
-            y la{" "}
-            <a href="#legal" className="underline text-slate-950 hover:text-sky-700">
-              Política de privacidad
-            </a>. Entiendo que los materiales son educativos y no reemplazan la consulta médica presencial.
-          </span>
-        </label>
-
-        <button onClick={handleCulqi} disabled={loading}
-          className="w-full flex items-center justify-center gap-2 rounded-2xl bg-slate-950 py-4 text-sm font-semibold text-white hover:bg-slate-800 transition disabled:opacity-60 mb-3">
-          <CreditCard className="h-4 w-4" />
-          {loading ? "Cargando..." : `Pagar ${fmt(product.price)} con tarjeta`}
-        </button>
-
-        <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-            `Hola Dr. Jhonatan, quiero adquirir: ${product.title} (${fmt(product.price)}). Mi correo: ${email || "---"}`
-          )}`} target="_blank" rel="noreferrer"
-          className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-3.5 text-sm font-semibold text-white hover:bg-[#20bc5a] transition">
-          <MessageCircle className="h-4 w-4" /> Pagar por Yape / Plin vía WhatsApp
-        </a>
-
-        <p className="mt-4 text-center text-xs text-slate-400 flex items-center justify-center gap-1">
-          <Shield className="h-3.5 w-3.5" /> Pago seguro con Culqi · Modo prueba activo
-        </p>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-/* ─── SUCCESS MODAL ─── */
-function SuccessModal({ data, onClose }) {
-  const msg = encodeURIComponent(
-    `Hola Dr. Jhonatan, acabo de realizar el pago de:\n${data.product.title} (${fmt(data.product.price)})\nNombre: ${data.name}\nCorreo: ${data.email}\nToken: ${data.token?.id || "TEST"}`
-  );
-  return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
-      <motion.div initial={{ scale: 0.92 }} animate={{ scale: 1 }}
-        className="w-full max-w-md rounded-[2rem] bg-white p-8 shadow-2xl text-center">
-        <div className="flex h-16 w-16 mx-auto items-center justify-center rounded-full bg-emerald-100 text-emerald-600 mb-4">
-          <CheckCircle2 className="h-8 w-8" />
-        </div>
-        <h3 className="text-2xl font-semibold text-slate-950 mb-2">¡Pago recibido!</h3>
-        <p className="text-sm leading-7 text-slate-500 mb-6">
-          Gracias <strong>{data.name}</strong>. Tu pago fue procesado. Envía el mensaje de confirmación por WhatsApp para recibir el producto en <strong>{data.email}</strong>.
-        </p>
-        <div className="flex flex-col gap-3">
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`} target="_blank" rel="noreferrer"
-            className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-4 text-sm font-semibold text-white hover:bg-[#20bc5a] transition">
-            <MessageCircle className="h-4 w-4" /> Confirmar por WhatsApp y recibir producto
-          </a>
-          <button onClick={onClose}
-            className="w-full rounded-2xl border border-slate-200 py-3.5 text-sm font-medium text-slate-600 hover:bg-slate-50 transition">
-            Cerrar
-          </button>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-/* ─── MAIN STORE ─── */
 export default function Store() {
   const [cart, setCart]             = useState([]);
   const [cartOpen, setCartOpen]     = useState(false);
-  const [payProduct, setPayProduct] = useState(null);
-  const [success, setSuccess]       = useState(null);
 
   const cartCount = cart.reduce((s, i) => s + i.qty, 0);
 
@@ -522,6 +337,13 @@ export default function Store() {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
   };
 
+  const handleBuyNow = (product) => {
+    const msg = encodeURIComponent(
+      `Hola Dr. Jhonatan, deseo adquirir el producto:\n• ${product.title} — ${fmt(product.price)}`
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+  };
+
   return (
     <section id="tienda" className="relative mx-auto max-w-7xl px-5 py-24 lg:px-8">
 
@@ -536,7 +358,7 @@ export default function Store() {
             Elige tu producto o agenda tu consulta.
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-500">
-            Paga con tarjeta (Visa / Mastercard) o coordina por WhatsApp con Yape o Plin.
+            Coordina tu pedido por WhatsApp para pagar con Yape o Plin.
             Precios expresados en Soles peruanos (PEN). Los materiales digitales son educativos.
           </p>
         </div>
@@ -556,14 +378,14 @@ export default function Store() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {storeProducts.map((product) => (
           <ProductCard key={product.id} product={product}
-            onAddToCart={addToCart} onBuyNow={setPayProduct} />
+            onAddToCart={addToCart} onBuyNow={handleBuyNow} />
         ))}
       </div>
 
       {/* Trust badges */}
       <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
-        <span className="flex items-center gap-2"><Shield className="h-4 w-4" /> Pago seguro con Culqi</span>
-        <span className="flex items-center gap-2"><MessageCircle className="h-4 w-4" /> También por Yape / Plin</span>
+        <span className="flex items-center gap-2"><Shield className="h-4 w-4" /> Pedido directo por WhatsApp</span>
+        <span className="flex items-center gap-2"><MessageCircle className="h-4 w-4" /> Pagos con Yape / Plin</span>
         <span className="flex items-center gap-2"><Clock className="h-4 w-4" /> Entrega en máx. 24 h hábiles</span>
         <span className="flex items-center gap-2"><Tag className="h-4 w-4" /> Precios en Soles peruanos (PEN)</span>
       </div>
@@ -578,13 +400,6 @@ export default function Store() {
             <CartDrawer cart={cart} onClose={() => setCartOpen(false)}
               onRemove={removeFromCart} onCheckout={handleCheckout} />
           </>
-        )}
-        {payProduct && (
-          <PaymentModal product={payProduct} onClose={() => setPayProduct(null)}
-            onSuccess={(d) => { setPayProduct(null); setSuccess(d); setCart([]); }} />
-        )}
-        {success && (
-          <SuccessModal data={success} onClose={() => setSuccess(null)} />
         )}
       </AnimatePresence>
     </section>
