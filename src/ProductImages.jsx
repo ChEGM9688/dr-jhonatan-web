@@ -36,7 +36,7 @@ export function ImgGuia() {
       <text x="280" y="120" textAnchor="middle" fill="white" fontSize="9" fontWeight="600">PDF</text>
       {/* Price tag */}
       <rect x="242" y="155" width="76" height="30" rx="8" fill="white" opacity="0.95"/>
-      <text x="280" y="175" textAnchor="middle" fill="#0ea5e9" fontSize="14" fontWeight="700">S/ 39</text>
+      <text x="280" y="175" textAnchor="middle" fill="#0ea5e9" fontSize="14" fontWeight="700">S/ 29</text>
       {/* Decorative circles */}
       <circle cx="50" cy="50" r="30" fill="#0ea5e9" opacity="0.15"/>
       <circle cx="370" cy="220" r="40" fill="#0284c7" opacity="0.12"/>
@@ -78,7 +78,7 @@ export function ImgChecklist() {
       <text x="297" y="132" textAnchor="middle" fill="white" fontSize="9">SEGURA</text>
       {/* Price */}
       <rect x="257" y="158" width="81" height="30" rx="8" fill="white" opacity="0.95"/>
-      <text x="297" y="178" textAnchor="middle" fill="#16a34a" fontSize="14" fontWeight="700">S/ 19</text>
+      <text x="297" y="178" textAnchor="middle" fill="#16a34a" fontSize="14" fontWeight="700">S/ 15</text>
       {/* Decorations */}
       <circle cx="45" cy="45" r="28" fill="#22c55e" opacity="0.12"/>
       <circle cx="360" cy="210" r="38" fill="#16a34a" opacity="0.1"/>
@@ -125,7 +125,7 @@ export function ImgMiniCurso() {
       <text x="309" y="129" textAnchor="middle" fill="white" fontSize="9">VIDEO+PDF</text>
       {/* Price */}
       <rect x="270" y="158" width="80" height="30" rx="8" fill="white" opacity="0.95"/>
-      <text x="310" y="178" textAnchor="middle" fill="#7c3aed" fontSize="14" fontWeight="700">S/ 79</text>
+      <text x="310" y="178" textAnchor="middle" fill="#7c3aed" fontSize="14" fontWeight="700">S/ 49</text>
       {/* Decorations */}
       <circle cx="45" cy="40" r="26" fill="#8b5cf6" opacity="0.12"/>
       <circle cx="365" cy="215" r="38" fill="#7c3aed" opacity="0.1"/>
@@ -181,7 +181,7 @@ export function ImgConsulta() {
       <text x="321" y="125" textAnchor="middle" fill="white" fontSize="9">45-60 min</text>
       {/* Price */}
       <rect x="278" y="158" width="86" height="30" rx="8" fill="white" opacity="0.95"/>
-      <text x="321" y="178" textAnchor="middle" fill="#047857" fontSize="14" fontWeight="700">S/ 150</text>
+      <text x="321" y="178" textAnchor="middle" fill="#047857" fontSize="14" fontWeight="700">S/ 99</text>
       {/* Stethoscope decoration */}
       <text x="95" y="210" fontSize="28" opacity="0.25">🩺</text>
       <circle cx="45" cy="45" r="26" fill="#059669" opacity="0.12"/>
