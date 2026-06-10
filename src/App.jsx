@@ -807,7 +807,7 @@ export default function App() {
                 <img
                   src={doctor.photo}
                   alt={`${doctor.name}, médico anestesiólogo en Perú`}
-                  className="absolute bottom-0 left-1/2 h-[410px] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
+                  className="absolute bottom-0 left-1/2 h-[450px] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
                   loading="eager"
                 />
                 {/* Top badge */}
