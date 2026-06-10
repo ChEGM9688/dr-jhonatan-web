@@ -11,6 +11,13 @@ async function generatePDFs() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   
+  // Set viewport to match A4 aspect ratio at screen resolution
+  await page.setViewport({
+    width: 794,
+    height: 1123,
+    deviceScaleFactor: 1
+  });
+  
   // Array of PDF configurations
   const pdfs = [
     { id: 'guia-preanestesica', title: 'Guía Preanestésica para Pacientes', type: 'Guía' },
@@ -33,10 +40,8 @@ async function generatePDFs() {
       content = `<h2>Contenido en construcción</h2><p>El contenido para ${doc.title} aún no ha sido escrito.</p>`;
     }
 
-    let useNativeFooter = true;
     if (content.includes('<!DOCTYPE html>')) {
         html = content;
-        useNativeFooter = false;
     } else {
         // Replace placeholders
         html = html.replaceAll('{{TITLE}}', doc.title);
@@ -47,19 +52,17 @@ async function generatePDFs() {
     // Set content and render
     await page.setContent(html, { waitUntil: 'load' });
     
-    // Save PDF
+    // Save PDF with zero margins to allow HTML/CSS absolute control over margins and page breaks
     await page.pdf({
       path: path.join(__dirname, `${doc.id}.pdf`),
       format: 'A4',
       printBackground: true,
-      displayHeaderFooter: useNativeFooter,
-      headerTemplate: '<span></span>',
-      footerTemplate: `<div style="font-size: 10px; color: #94a3b8; text-align: center; width: 100%; font-family: 'Arial', sans-serif;">Página <span class="pageNumber"></span> | ${doc.title}</div>`,
+      displayHeaderFooter: false,
       margin: {
-        top: '60px',
-        right: '50px',
-        bottom: '60px',
-        left: '50px'
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0
       }
     });
     console.log(`Saved: ${doc.id}.pdf`);

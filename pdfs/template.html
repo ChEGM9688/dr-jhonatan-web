@@ -60,13 +60,14 @@
 
         /* Front Cover Page */
         .cover-page {
-            height: 98vh; /* Full A4 page height for cover */
+            width: 210mm;
+            height: 297mm;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             background: radial-gradient(circle at top left, #f5fafd 0%, #ffffff 50%, #f6fdf8 100%);
-            padding: 80px 60px;
+            padding: 30mm 20mm;
             box-sizing: border-box;
             page-break-after: always;
             text-align: center;
@@ -140,11 +141,14 @@
         /* Content Pages */
         .page {
             background-color: #ffffff;
-            min-height: 98vh;
+            width: 210mm;
+            height: 297mm;
             page-break-after: always;
-            padding: 20px 0;
+            padding: 20mm;
+            box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .header {
