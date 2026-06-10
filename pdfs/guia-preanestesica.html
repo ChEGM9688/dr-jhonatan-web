@@ -1,3 +1,85 @@
+<style>
+    /* Custom CSS overrides to make the guide fit perfectly on A4 pages without spilling */
+    .card {
+        padding: 16px 20px;
+        border-radius: 14px;
+        margin-bottom: 12px;
+    }
+    .card-grid {
+        gap: 12px;
+        margin: 12px 0;
+    }
+    h1 {
+        font-size: 26px;
+        margin-bottom: 12px;
+        font-family: var(--font-serif);
+        font-weight: 400;
+    }
+    h2 {
+        font-size: 15.5px;
+        margin-top: 18px;
+        margin-bottom: 10px;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--color-border);
+        font-weight: 600;
+        color: var(--color-gray-dark);
+    }
+    h3 {
+        font-size: 13.5px;
+        margin-top: 14px;
+        margin-bottom: 8px;
+    }
+    p {
+        font-size: 12.5px;
+        margin-bottom: 10px;
+        line-height: 1.55;
+    }
+    ul, ol {
+        margin-bottom: 14px;
+        font-size: 12.5px;
+    }
+    li {
+        margin-bottom: 6px;
+    }
+    .alert {
+        margin: 12px 0;
+        padding: 10px 16px;
+        border-radius: 12px;
+        font-size: 12px;
+    }
+    .alert-title {
+        font-size: 12.5px;
+        font-weight: 600;
+        margin-bottom: 4px;
+    }
+    .table-container {
+        margin: 12px 0;
+    }
+    th, td {
+        padding: 10px 12px;
+        font-size: 12px;
+        line-height: 1.45;
+    }
+    .checklist-item {
+        padding: 10px 14px;
+        border-radius: 12px;
+        margin-bottom: 8px;
+    }
+    .checkbox {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        border-radius: 4px;
+    }
+    .checklist-content h4 {
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+    .checklist-content p {
+        font-size: 11.5px;
+    }
+</style>
+
 <!-- PAGE 1: INTRODUCCIÓN Y EVALUACIÓN PREANESTÉSICA -->
 <div class="page">
     <div class="header">
@@ -54,7 +136,7 @@
     </div>
 
     <div class="footer-note">
-        Guía Preanestésica Oficial · Página 1 de 5 · Dr. Jhonatan Guevara Marín
+        Guía Preanestésica Oficial · Dr. Jhonatan Guevara Marín
     </div>
 </div>
 
@@ -124,7 +206,7 @@
     </div>
 
     <div class="footer-note">
-        Guía Preanestésica Oficial · Página 2 de 5 · Dr. Jhonatan Guevara Marín
+        Guía Preanestésica Oficial · Dr. Jhonatan Guevara Marín
     </div>
 </div>
 
@@ -166,7 +248,7 @@
                 <tr>
                     <td><strong>Metformina</strong></td>
                     <td><span class="pill pill-amber">24 a 48 Horas</span></td>
-                    <td>Riesgo de desarrollar acidosis láctica (complicación grave en la sangre), especialmente si se emplean sustancias de contraste.</td>
+                    <td>Riesgo de acidosis láctica, especialmente si se emplean sustancias de contraste.</td>
                 </tr>
                 <tr>
                     <td><strong>Inhibidores SGLT2</strong><br>(Dapagliflozina, Empagliflozina)</td>
@@ -181,7 +263,7 @@
                 <tr>
                     <td><strong>Antiagregantes</strong><br>(Clopidogrel, Prasugrel)</td>
                     <td><span class="pill pill-red">5 a 7 Días</span></td>
-                    <td>Evita hemorragias incontrolables en el sitio quirúrgico o hematomas en anestesia epidural.</td>
+                    <td>Evita hemorragias en el sitio quirúrgico o hematomas en anestesia epidural.</td>
                 </tr>
                 <tr>
                     <td><strong>Suplementos y Vitaminas</strong><br>(Ginkgo Biloba, Ajo, Ginseng)</td>
@@ -194,11 +276,11 @@
 
     <div class="alert alert-danger">
         <div class="alert-title">Importante: Regla de Oro sobre Diabetes</div>
-        <p>Si usas <strong>insulina</strong>, la mañana de la cirugía debes **suspender la dosis de acción rápida** porque estarás en ayuno, y reducir la dosis de insulina basal según indicación médica para evitar hipoglucemias graves en el quirófano.</p>
+        <p>Si usas <strong>insulina</strong>, la mañana de la cirugía debes **suspender la dosis de acción rápida** porque estarás en ayuno, y reducir la dosis de insulina basal según indicación médica para evitar hipoglucemias graves.</p>
     </div>
 
     <div class="footer-note">
-        Guía Preanestésica Oficial · Página 3 de 5 · Dr. Jhonatan Guevara Marín
+        Guía Preanestésica Oficial · Dr. Jhonatan Guevara Marín
     </div>
 </div>
 
@@ -257,7 +339,7 @@
     </div>
 
     <div class="footer-note">
-        Guía Preanestésica Oficial · Página 4 de 5 · Dr. Jhonatan Guevara Marín
+        Guía Preanestésica Oficial · Dr. Jhonatan Guevara Marín
     </div>
 </div>
 
@@ -287,7 +369,7 @@
     <div class="card-grid">
         <div class="card" style="border-left: 4px solid var(--color-red);">
             <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Ocultar Antecedentes o Hábitos</strong>
-            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">No declarar el consumo de alcohol, tabaco, vapeo o medicamentos naturales altera el cálculo de dosis y puede causar arritmias o despertar superficial en sala.</p>
+            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">No declarar el consumo de alcohol, tabaco, vapeo o medicamentos naturales altera el cálculo de dosis y puede causar arritmias o despertar superficial.</p>
         </div>
         <div class="card" style="border-left: 4px solid var(--color-red);">
             <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Desobedecer las Horas de Ayuno</strong>
@@ -295,7 +377,7 @@
         </div>
         <div class="card" style="border-left: 4px solid var(--color-red);">
             <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Omitir Síntomas de Infección</strong>
-            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">Ingresar a sala con tos, congestión nasal, fiebre o malestar estomacal eleva el riesgo de espasmo bronquial o complicaciones respiratorias bajo anestesia.</p>
+            <p style="font-size:12px; margin:0; color: var(--color-gray-sub);">Ingresar a sala con tos, congestión nasal, fiebre o malestar estomacal eleva el riesgo de espasmo bronquial o complicaciones respiratorias.</p>
         </div>
         <div class="card" style="border-left: 4px solid var(--color-red);">
             <strong style="color: var(--color-red); font-size:13px; display:block; margin-bottom:6px;">❌ Automedicarse</strong>
@@ -309,6 +391,6 @@
     </div>
 
     <div class="footer-note">
-        Guía Preanestésica Oficial · Página 5 de 5 · Dr. Jhonatan Guevara Marín
+        Guía Preanestésica Oficial · Dr. Jhonatan Guevara Marín
     </div>
 </div>
