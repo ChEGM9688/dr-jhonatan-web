@@ -807,19 +807,19 @@ export default function App() {
                 <img
                   src={doctor.photo}
                   alt={`${doctor.name}, médico anestesiólogo en Perú`}
-                  className="absolute bottom-0 left-1/2 h-[560px] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
+                  className="absolute bottom-0 left-1/2 h-[410px] w-auto max-w-none -translate-x-1/2 object-contain drop-shadow-2xl"
                   loading="eager"
                 />
                 {/* Top badge */}
-                <div className="absolute left-4 right-4 top-4 rounded-[1.75rem] border border-white/70 bg-white/80 p-5 shadow-xl backdrop-blur-xl">
-                  <div className="flex items-start justify-between gap-4">
+                <div className="absolute left-4 right-4 top-4 rounded-[1.25rem] border border-white/70 bg-white/85 py-3 px-4 shadow-xl backdrop-blur-xl">
+                  <div className="flex items-center justify-between gap-3">
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Médico Anestesiólogo · Perú</p>
-                      <h2 className="mt-1.5 text-xl font-semibold tracking-tight text-slate-950">{doctor.name}</h2>
-                      <p className="mt-1 text-xs text-slate-500">CMP {doctor.cmp} · RNE {doctor.rne}</p>
+                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">Médico Anestesiólogo · Perú</p>
+                      <h2 className="mt-0.5 text-base font-semibold tracking-tight text-slate-950">{doctor.name}</h2>
+                      <p className="text-[11px] text-slate-500">CMP {doctor.cmp} · RNE {doctor.rne}</p>
                     </div>
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-slate-950 text-white">
-                      <Stethoscope className="h-5 w-5" />
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-white">
+                      <Stethoscope className="h-4.5 w-4.5" />
                     </div>
                   </div>
                 </div>
