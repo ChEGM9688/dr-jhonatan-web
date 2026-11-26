@@ -164,7 +164,7 @@ export function SobreNosotros() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">Ubicación</p>
-                  <p className="font-medium text-slate-800">Juliaca, Puno, Perú</p>
+                  <p className="font-medium text-slate-800">Perú</p>
                   <p className="text-xs text-slate-400">(Atención virtual a todo el país)</p>
                 </div>
               </div>
