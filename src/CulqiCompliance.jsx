@@ -112,11 +112,11 @@ export function SobreNosotros() {
             </div>
             <p className="text-sm leading-7 text-slate-600">
               El <strong className="text-slate-950">Dr. Jhonatan Guevara Marín</strong> es médico anestesiólogo colegiado en Perú, con registro CMP 074566 y RNE 051391.
-              Ofrece orientación preanestésica virtual para pacientes que desean llegar informados, tranquilos y mejor preparados a su cirugía o procedimiento.
+              Ofrece orientación preanestésica virtual para pacientes de cualquier país en <strong className="text-slate-950">español y português</strong>, que desean llegar informados, tranquilos y mejor preparados a su cirugía o procedimiento.
             </p>
             <div className="mt-4 space-y-2 text-xs text-slate-500">
               <p>• Especialidad: Anestesiología</p>
-              <p>• País de operación: Perú</p>
+              <p>• Cobertura: Internacional (español y português)</p>
               <p>• Modalidad: Servicio virtual (Google Meet)</p>
               <p>• Moneda de cobro: Soles peruanos (PEN)</p>
             </div>
@@ -164,8 +164,8 @@ export function SobreNosotros() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">Ubicación</p>
-                  <p className="font-medium text-slate-800">Perú</p>
-                  <p className="text-xs text-slate-400">(Atención virtual a todo el país)</p>
+                  <p className="font-medium text-slate-800">Internacional</p>
+                  <p className="text-xs text-slate-400">(Español · Português · Atención virtual)</p>
                 </div>
               </div>
             </div>

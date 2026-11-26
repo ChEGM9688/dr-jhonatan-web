@@ -34,6 +34,8 @@ const doctor = {
   firstName: "Jhonatan",
   specialty: "Médico Anestesiólogo",
   country: "Perú",
+  coverage: "Internacional",
+  langs: "Español · Português",
   cmp: "074566",
   rne: "051391",
   whatsapp: "+51 943 740 001",
@@ -737,7 +739,7 @@ export default function App() {
       <section id="inicio" className="relative mx-auto max-w-7xl px-5 pb-20 pt-16 lg:px-8 lg:pb-28 lg:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <SectionLabel>Orientación preanestésica virtual · Perú</SectionLabel>
+            <SectionLabel>Orientación preanestésica virtual · Internacional</SectionLabel>
             <h1
               className="max-w-4xl text-5xl tracking-[-0.04em] text-slate-950 sm:text-6xl lg:text-7xl"
               style={{ fontFamily: "'DM Serif Display', serif" }}
@@ -745,9 +747,9 @@ export default function App() {
               Llega a tu cirugía tranquilo, informado y preparado.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600">
-              Soy el {doctor.name}, médico anestesiólogo en Perú. Brindo{" "}
+              Soy el {doctor.name}, médico anestesiólogo (CMP {doctor.cmp}). Brindo{" "}
               <strong className="font-semibold text-slate-800">orientación preanestésica virtual</strong>{" "}
-              por Google Meet para resolver dudas, organizar información y preparar mejor tu proceso quirúrgico.
+              por Google Meet en <strong className="font-semibold text-slate-800">español y português</strong> para pacientes de cualquier país que se preparan para una cirugía.
             </p>
 
             {/* Credentials */}
@@ -756,7 +758,7 @@ export default function App() {
                 ["CMP", doctor.cmp],
                 ["RNE", doctor.rne],
                 ["Modalidad", "Google Meet"],
-                ["País", "Perú"],
+                ["Idiomas", doctor.langs],
               ].map(([label, value]) => (
                 <div key={label} className="rounded-full border border-slate-200 bg-white/70 px-4 py-1.5 text-sm text-slate-600 shadow-sm backdrop-blur">
                   <span className="font-semibold text-slate-950">{label}:</span> {value}
@@ -814,7 +816,7 @@ export default function App() {
                 <div className="absolute left-4 right-4 top-4 rounded-[1.25rem] border border-white/70 bg-white/85 py-3 px-4 shadow-xl backdrop-blur-xl">
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">Médico Anestesiólogo · Perú</p>
+                      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-400">Médico Anestesiólogo · Internacional</p>
                       <h2 className="mt-0.5 text-base font-semibold tracking-tight text-slate-950">{doctor.name}</h2>
                       <p className="text-[11px] text-slate-500">CMP {doctor.cmp} · RNE {doctor.rne}</p>
                     </div>
@@ -1115,7 +1117,7 @@ export default function App() {
                   [UserRound, "Nombre", doctor.name],
                   [Stethoscope, "Especialidad", doctor.specialty],
                   [ShieldCheck, "Registro", `CMP ${doctor.cmp} · RNE ${doctor.rne}`],
-                  [MapPin, "Atención", `Virtual desde ${doctor.country}`],
+                  [MapPin, "Cobertura", `${doctor.coverage} · ${doctor.langs}`],
                   [Video, "Modalidad", doctor.meet],
                   [Phone, "WhatsApp", doctor.whatsapp],
                   [Mail, "Correo", doctor.email],
