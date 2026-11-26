@@ -306,7 +306,7 @@ function CartDrawer({ cart, onClose, onRemove, onCheckout }) {
             className="w-full flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] py-4 text-sm font-semibold text-white hover:bg-[#20bc5a] transition"
           >
             <MessageCircle className="h-4 w-4" />
-            Confirmar pedido por WhatsApp (Yape / Plin)
+            Confirmar pedido por WhatsApp (Yape / Plin / PayPal)
           </a>
         </div>
       )}
@@ -358,7 +358,7 @@ export default function Store() {
             Elige tu producto o agenda tu consulta.
           </h2>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-500">
-            Coordina tu pedido por WhatsApp para pagar con Yape o Plin.
+            Coordina tu pedido por WhatsApp para pagar con Yape, Plin o PayPal.
             Precios expresados en Soles peruanos (PEN). Los materiales digitales son educativos.
           </p>
         </div>
@@ -385,7 +385,7 @@ export default function Store() {
       {/* Trust badges */}
       <div className="mt-10 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
         <span className="flex items-center gap-2"><Shield className="h-4 w-4" /> Pedido directo por WhatsApp</span>
-        <span className="flex items-center gap-2"><MessageCircle className="h-4 w-4" /> Pagos con Yape / Plin</span>
+        <span className="flex items-center gap-2"><MessageCircle className="h-4 w-4" /> Pagos con Yape / Plin / PayPal</span>
         <span className="flex items-center gap-2"><Clock className="h-4 w-4" /> Entrega en máx. 24 h hábiles</span>
         <span className="flex items-center gap-2"><Tag className="h-4 w-4" /> Precios en Soles peruanos (PEN)</span>
       </div>

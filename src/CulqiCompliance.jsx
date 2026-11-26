@@ -181,7 +181,7 @@ export function SobreNosotros() {
               <div className="rounded-2xl border border-slate-100 bg-white p-4">
                 <p className="text-xs font-semibold text-slate-700 mb-2">Métodos de pago aceptados</p>
                 <div className="flex flex-wrap gap-2">
-                  {["Yape", "Plin", "Transferencia"].map((m) => (
+                  {["Yape", "Plin", "Transferencia", "PayPal"].map((m) => (
                     <span key={m} className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-700">{m}</span>
                   ))}
                 </div>

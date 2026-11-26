@@ -137,8 +137,8 @@ const steps = [
   },
   {
     icon: Smartphone,
-    title: "Realiza el pago por Yape o Plin",
-    description: "Pago manual inicial. Se verificará y se enviará confirmación de la cita.",
+    title: "Realiza el pago (Yape, Plin o PayPal)",
+    description: "Pago manual inicial. Yape / Plin para Perú · PayPal para pagos internacionales. Se verificará y confirmará la cita.",
   },
   {
     icon: Video,
@@ -162,7 +162,7 @@ const faqs = [
   ],
   [
     "¿Cómo se realiza la consulta virtual?",
-    "Por Google Meet. El proceso es: (1) escribes por WhatsApp, (2) completas el formulario previo, (3) realizas el pago por Yape o Plin, (4) recibes el enlace de la videollamada y (5) tienes tu orientación en el horario acordado.",
+    "Por Google Meet. El proceso es: (1) escribes por WhatsApp, (2) completas el formulario previo, (3) realizas el pago (Yape / Plin para Perú · PayPal para pagos internacionales), (4) recibes el enlace de la videollamada y (5) tienes tu orientación en el horario acordado.",
   ],
   [
     "¿Qué pasa después de la orientación?",
@@ -189,7 +189,7 @@ const privacySections = [
   },
   {
     title: "4. Finalidades del tratamiento",
-    body: "Los datos se utilizan para: (a) coordinar y realizar la consulta preanestésica virtual; (b) revisar la información previa enviada por el paciente; (c) gestionar pagos manuales (Yape/Plin); (d) entregar productos digitales adquiridos; (e) responder consultas y solicitudes; (f) mantener un registro administrativo del servicio.",
+    body: "Los datos se utilizan para: (a) coordinar y realizar la consulta preanestésica virtual; (b) revisar la información previa enviada por el paciente; (c) gestionar pagos manuales (Yape/Plin/PayPal); (d) entregar productos digitales adquiridos; (e) responder consultas y solicitudes; (f) mantener un registro administrativo del servicio.",
   },
   {
     title: "5. Tratamiento de datos de salud",
@@ -209,7 +209,7 @@ const privacySections = [
   },
   {
     title: "9. Terceros y herramientas utilizadas",
-    body: "Para operar el servicio se emplean herramientas externas como WhatsApp Business (Meta), Google Meet y Gmail (Google LLC), Yape (BCP) y Plin (operadores bancarios). Cada proveedor cuenta con sus propias políticas de privacidad. No se transfieren ni venden datos a terceros para fines comerciales.",
+    body: "Para operar el servicio se emplean herramientas externas como WhatsApp Business (Meta), Google Meet y Gmail (Google LLC), Yape (BCP), Plin (operadores bancarios) y PayPal (PayPal Holdings, Inc.). Cada proveedor cuenta con sus propias políticas de privacidad. No se transfieren ni venden datos a terceros para fines comerciales.",
   },
   {
     title: "10. Seguridad",
@@ -236,7 +236,7 @@ const termsSections = [
   },
   {
     title: "5. Pagos, reservas y confirmaciones",
-    body: "En la etapa inicial, los pagos se coordinan manualmente por Yape o Plin. La reserva queda confirmada únicamente cuando se verifica el pago y se envía el enlace de Google Meet al paciente. Los productos digitales se entregan por correo electrónico o WhatsApp una vez verificado el pago.",
+    body: "Los pagos se coordinan manualmente por Yape o Plin (clientes en Perú) o PayPal (clientes internacionales). La reserva queda confirmada únicamente cuando se verifica el pago y se envía el enlace de Google Meet al paciente. Los productos digitales se entregan por correo electrónico o WhatsApp una vez verificado el pago.",
   },
   {
     title: "6. Reprogramaciones y cancelaciones",
@@ -501,7 +501,7 @@ function IntakeForm() {
           </Button>
         </div>
         <p className="mt-5 text-xs text-slate-400">
-          Al presionar el botón se abrirá WhatsApp. El pago se coordina por Yape o Plin tras la confirmación de la cita.
+          Al presionar el botón se abrirá WhatsApp. El pago se coordina por Yape / Plin (Perú) o PayPal (internacional) tras la confirmación de la cita.
         </p>
       </div>
     );
@@ -785,7 +785,7 @@ export default function App() {
               {[
                 ["Google Meet", "Consulta virtual"],
                 ["S/ 99", "Precio inicial"],
-                ["Yape / Plin", "Forma de pago"],
+                ["Yape · Plin · PayPal", "Forma de pago"],
               ].map(([val, label]) => (
                 <div key={label} className="rounded-3xl border border-white/60 bg-white/70 p-4 shadow-lg shadow-slate-200/60 backdrop-blur text-center">
                   <div className="text-base font-semibold text-slate-950">{val}</div>
@@ -875,7 +875,7 @@ export default function App() {
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">Precio inicial sugerido</p>
                   <p className="mt-2 text-5xl font-semibold tracking-tight">S/ 99</p>
-                  <p className="mt-2 text-sm text-slate-500">Pago manual por Yape o Plin. Reserva confirmada tras verificar el pago.</p>
+                  <p className="mt-2 text-sm text-slate-500">Yape / Plin (Perú) · PayPal (internacional). Reserva confirmada tras verificar el pago.</p>
                 </div>
                 <a href={doctor.whatsappUrl} target="_blank" rel="noreferrer">
                   <Button variant="whatsapp">
@@ -1007,7 +1007,7 @@ export default function App() {
               De la duda a la tranquilidad en cuatro pasos.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              El proceso es simple, seguro y completamente virtual. La reserva se confirma tras verificar el pago por Yape o Plin.
+              El proceso es simple, seguro y completamente virtual. La reserva se confirma tras verificar el pago (Yape / Plin para Perú · PayPal para pagos internacionales).
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -1092,7 +1092,7 @@ export default function App() {
                 Da el primer paso hacia una cirugía mejor preparada.
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-white/65">
-                Reserva una orientación preanestésica virtual por Google Meet o adquiere un recurso educativo digital. El pago inicial se coordina por Yape o Plin.
+                Reserva una orientación preanestésica virtual por Google Meet o adquiere un recurso educativo digital. El pago se coordina por Yape / Plin (Perú) o PayPal (internacional).
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a href={doctor.whatsappUrl} target="_blank" rel="noreferrer">
@@ -1121,7 +1121,7 @@ export default function App() {
                   [Video, "Modalidad", doctor.meet],
                   [Phone, "WhatsApp", doctor.whatsapp],
                   [Mail, "Correo", doctor.email],
-                  [Smartphone, "Pagos", "Yape / Plin (manual)"],
+                  [Smartphone, "Pagos", "Yape / Plin · PayPal"],
                 ].map(([Icon, label, value]) => (
                   <p key={label} className="flex items-center gap-3 text-white/70">
                     <Icon className="h-4 w-4 shrink-0 text-white/40" />
