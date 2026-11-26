@@ -254,7 +254,7 @@ const termsSections = [
   },
   {
     title: "10. Jurisdicción y legislación aplicable",
-    body: "Estos términos se rigen por la legislación de la República del Perú. Ante cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes de la ciudad de Juliaca, Puno, Perú, salvo que la normativa aplicable disponga otra cosa.",
+    body: "Estos términos se rigen por la legislación de la República del Perú. Ante cualquier controversia, las partes se someten a la jurisdicción de los tribunales competentes de la República del Perú, salvo que la normativa aplicable disponga otra cosa.",
   },
 ];
 

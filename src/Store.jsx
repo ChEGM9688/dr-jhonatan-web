@@ -63,7 +63,7 @@ export const storeProducts = [
     badge: "Más completo",
     badgeColor: "#7c3aed",
     Image: ImgMiniCurso,
-    shortDesc: "Entiende la anestesia de principio a fin and llega tranquilo a tu procedimiento.",
+    shortDesc: "Entiende la anestesia de principio a fin y llega tranquilo a tu procedimiento.",
     description:
       "Curso educativo en formato video y PDF dirigido a pacientes que sienten miedo o ansiedad ante la anestesia. Explica en lenguaje accesible los tipos de anestesia, qué ocurre durante el procedimiento, cómo es el despertar y el manejo del dolor postoperatorio.",
     includes: [
